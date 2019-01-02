@@ -1,0 +1,47 @@
+{
+    "defaults": {
+        "description": "HSMetrics decider test",
+        "metricsResources": "/expected_output/development/",
+        "parameters": {
+            "--parent-wf-accessions": "9532886,10237604,10345255"
+        },
+        "iniExclusions": ["parent-accessions", "json_metadata_file", "workflow_run_accession", "workflow-run-accession",
+            "unique_string", "parent_accessions", "parent_accession", "input_file", "input_files", "workflow_bundle_dir",
+            "output_prefix", "samstats_script"]
+    },
+    "tests": [
+        {
+            "id": "study test",
+            "parameters": {
+                "--study-name": "TGL07",
+                "--template-type": "WT",
+                "--bait-file": "/.mounts/labs/PDE/data/interval-files/TargetedSequencingQC/Agilent.SureSelect.All.Exon.V5.UTRs/Agilent_SureSelectXT_Human_All_Exon_V5_UTRs.bed",
+                "--target-file": "/.mounts/labs/PDE/data/interval-files/TargetedSequencingQC/Agilent.SureSelect.All.Exon.V5.UTRs/Agilent_SureSelectXT_Human_All_Exon_V5_UTRs.bed",
+                "--ref-dict": "/.mounts/labs/PDE/data/gatkAnnotationResources/hg19_random.dict",
+                "--ref-fasta": "/.mounts/labs/PDE/data/gatkAnnotationResources/hg19_random.fa"
+            }
+        },
+        {
+            "id": "TGL17_EX",
+            "parameters": {
+                "--study-name": "TGL17",
+                "--template-type": "EX",
+                "--bait-file": "/.mounts/labs/PDE/data/interval-files/TargetedSequencingQC/Agilent.SureSelect.All.Exon.V5.UTRs/Agilent_SureSelectXT_Human_All_Exon_V5_UTRs.bed",
+                "--target-file": "/.mounts/labs/PDE/data/interval-files/TargetedSequencingQC/Agilent.SureSelect.All.Exon.V5.UTRs/Agilent_SureSelectXT_Human_All_Exon_V5_UTRs.bed",
+                "--ref-dict": "/.mounts/labs/PDE/data/gatkAnnotationResources/hg19_random.dict",
+                "--ref-fasta": "/.mounts/labs/PDE/data/gatkAnnotationResources/hg19_random.fa"
+            }
+        },
+        {
+            "id": "TGL17_WT",
+            "parameters": {
+                "--study-name": "TGL17",
+                "--template-type": "WT",
+                "--bait-file": "/.mounts/labs/PDE/data/interval-files/TargetedSequencingQC/Agilent.SureSelect.All.Exon.V5.UTRs/Agilent_SureSelectXT_Human_All_Exon_V5_UTRs.bed",
+                "--target-file": "/.mounts/labs/PDE/data/interval-files/TargetedSequencingQC/Agilent.SureSelect.All.Exon.V5.UTRs/Agilent_SureSelectXT_Human_All_Exon_V5_UTRs.bed",
+                "--ref-dict": "/.mounts/labs/PDE/data/gatkAnnotationResources/hg19_random.dict",
+                "--ref-fasta": "/.mounts/labs/PDE/data/gatkAnnotationResources/hg19_random.fa"
+            }
+        }
+    ]
+}
