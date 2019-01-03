@@ -1,6 +1,7 @@
 package ca.on.oicr.pde.workflows;
 
 import ca.on.oicr.pde.utilities.workflows.OicrWorkflow;
+import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -57,15 +58,16 @@ public class CbiowrapWorkflow extends OicrWorkflow {
     private String cbioWrapPath;
     
     // reference files
-    private String hotspotGenesFile = "/.mounts/labs/TGL/gsi/databases/20161121_Chang_hotspot_list.tsv";
-    private String oncoKBFile = "/.mounts/labs/TGL/gsi/databases/20170412_oncoKB.tsv";
-    private String ensembleConversonFile = "/.mounts/labs/TGL/gsi/databases/ensemble_conversion.txt";
-    private String blackList ="/.mounts/labs/TGL/gsi/databases/blacklist.txt";
+    private String hotspotGenesFile;
+    private String oncoKBFile;
+    private String ensembleConversonFile;
+    private String blackList;
     
     
     private boolean manualOutput;
     private String queue;
     private int cbiowrapMem;
+    private String ident;
     
     //
 
@@ -87,6 +89,9 @@ public class CbiowrapWorkflow extends OicrWorkflow {
             rPath = getProperty("rpath");
             cbioWrapPath = getProperty("cbiowrap_basedir");
             cbioWrapper = cbioWrapPath + "/R/wrapper.r";
+            
+            //
+            ident = getProperty("output_filename_prefix");
 
             /// read all params
             inputCommaSeparatedMafs = getProperty("input_mafs");
@@ -172,33 +177,38 @@ public class CbiowrapWorkflow extends OicrWorkflow {
         
         Date date = Calendar.getInstance().getTime();
         DateFormat dateFormat = new SimpleDateFormat("yyyymmdd");
-        String outputFileNamePrefix = dateFormat.format(date);
+        String outputFileNamePrefix = dateFormat.format(date) + ident;
         // read MAFs
-        for (int imx = 0; imx <= nMafs; imx ++){
+        for (int imx = 0; imx < nMafs; imx ++){
             String inMAF = getFiles().get("inputMAFs" + Integer.toString(imx)).getProvisionedPath();
             inputMafs.add(inMAF);
         }
         // post process MAFs (copy to tmp directory)
         String mafDir = this.dataDir + "MAF";
-        String inMAFs = inputMafs.toString().replace(", ", ",").replaceAll("[\\[.\\]]", "");
+        String inMAFs = inputMafs.toString().replace(", ", ",").replaceAll("[\\[\\]]", "");
         String combinedMaf = this.tmpDir + outputFileNamePrefix + "_combined_raw.maf.txt";
         Job createMafDir = linkMAFs(mafDir, inMAFs, combinedMaf);
         parentJob = createMafDir;
         
         // read Segs
-        for (int isx = 0; isx <= nSegs; isx++){
+        for (int isx = 0; isx < nSegs; isx++){
             String inSEG = getFiles().get("inputSEGs" + Integer.toString(isx)).getProvisionedPath();
             inputSegs.add(inSEG);
         }
         // post process Segs into a single file
-        String combinedSegFile = this.tmpDir + outputFileNamePrefix  + "_copynumber.seg";
-        String inSegFiles = inputSegs.toString().replace(", ", ",").replaceAll("[\\[.\\]]", "");
+        String combinedSegFile = this.tmpDir + outputFileNamePrefix  + "_copynumber.txt";
+        String inSegFiles = inputSegs.toString().replace(", ", ",").replaceAll("[\\[\\]]", "");
         Job generateCombinedCopySeg = copySegProcess(inSegFiles, combinedSegFile);
         // provision out combined seg file
-        SqwFile copySegSqw = createOutputFile(combinedSegFile, TEXT_METATYPE, this.manualOutput);
-        copySegSqw.getAnnotations().put("SEG", "cbiowrap");
-        generateCombinedCopySeg.addFile(copySegSqw);
-        
+        String cnvKitSegFile = combinedSegFile.replace(".txt", ".cnvkit.seg");
+        String sequenzaSegFile = combinedSegFile.replace(".txt", ".sequenza.seg");
+        SqwFile copyCNVkitSegSqw = createOutputFile(cnvKitSegFile, TEXT_METATYPE, this.manualOutput);
+        copyCNVkitSegSqw.getAnnotations().put("CNVKIT_SEG", "cbiowrap");
+        generateCombinedCopySeg.addFile(copyCNVkitSegSqw);
+        SqwFile copySequenzaSegSqw = createOutputFile(sequenzaSegFile, TEXT_METATYPE, this.manualOutput);
+        copySequenzaSegSqw.getAnnotations().put("SEQZ_SEG", "cbiowrap");
+        generateCombinedCopySeg.addFile(copySequenzaSegSqw);
+  
         generateCombinedCopySeg.addParent(parentJob);
         parentJob = generateCombinedCopySeg;
         
@@ -209,7 +219,7 @@ public class CbiowrapWorkflow extends OicrWorkflow {
                 String inRT = getFiles().get("inputRTABs" + Integer.toString(itx)).getProvisionedPath();
                 inputRtabs.add(inRT);
             }
-            String csInRTs = inputRtabs.toString().replace(", ", ",").replaceAll("[\\[.\\]]", "");
+            String csInRTs = inputRtabs.toString().replace(", ", ",").replaceAll("[\\[\\]]", "");
             
             // read Rcounts
             for (int irx = 0; irx <= nRCs; irx++) {
@@ -217,7 +227,7 @@ public class CbiowrapWorkflow extends OicrWorkflow {
                 inputRcounts.add(inRC);
             }
             // post process Rcounts 
-            String csInRCs = inputRcounts.toString().replace(", ", ",").replaceAll("[\\[.\\]]", "");
+            String csInRCs = inputRcounts.toString().replace(", ", ",").replaceAll("[\\[\\]]", "");
             postprocRC = this.dataDir + outputFileNamePrefix + "_RCOUNT.txt";
             Job postProcRSEM = postProcessRSEM(csInRCs, csInRTs, postprocRC);
             // provision out combined Rcounts file
@@ -277,7 +287,7 @@ public class CbiowrapWorkflow extends OicrWorkflow {
         cmd.addArgument(this.hotspotGenesFile);
         cmd.addArgument(this.oncoKBFile);
         cmd.addArgument(this.ensembleConversonFile);
-        cmd.addArgument(this.blackList);
+        cmd.addArgument(this.blackList + ";\n");
         // set additional 
         cmd.addArgument("tar -zcvf " + cbiowrapDir + ".tar.gz" + " " + cbiowrapDir);
         cbioWrap.setMaxMemory(Integer.toString(this.cbiowrapMem * 1024));
@@ -293,9 +303,9 @@ public class CbiowrapWorkflow extends OicrWorkflow {
         for (String mafFile : mafFiles){
             cmd.addArgument("ln -s " + mafFile + " " + mafDir);
         }
-        cmd.addArgument("cd " + mafDir);
-        cmd.addArgument("zcat $(ls *.maf.gz | head -1) | awk 'NR == 2' > " + combinedMaf);
-        cmd.addArgument("for i in $(ls *.maf.gz); do zcat $i | awk 'NR > 2' >> " + combinedMaf + ";done");
+//        cmd.addArgument("cd " + mafDir);
+        cmd.addArgument("zcat $(ls " + mafDir + "/*.maf.gz | head -1) | awk 'NR == 2' > " + combinedMaf);
+        cmd.addArgument("for i in $(ls " + mafDir + "/*.maf.gz); do zcat $i | awk 'NR > 2' >> " + combinedMaf + ";done");
         // set additional 
         linkMAF.setMaxMemory(Integer.toString(this.cbiowrapMem * 1024));
         linkMAF.setQueue(getOptionalProperty("queue", ""));
@@ -307,22 +317,29 @@ public class CbiowrapWorkflow extends OicrWorkflow {
         String[] copySegFiles = inCopySegs.split(",");
         Command cmd = combineCopySeg.getCommand();
         for (String segFile : copySegFiles){
-            String tmpFL = this.tmpDir + getSampleName(segFile, ".seg") + ".txt";
-            cmd.addArgument("head -1 " + segFile + " > " + tmpFL);
-            if (segFile.contains(".sorted.filter.deduped.realign.recal")){
+            File segFLdeet = new File(segFile);
+            String segFlbasename = segFLdeet.getName();
+            String tmpFL;
+            if (segFile.endsWith(".sorted.filter.deduped.realign.recal.seg")){
+                tmpFL = this.tmpDir + getSampleName(segFlbasename, ".sorted.filter.deduped.realign.recal.seg") + "cnvkit.txt";
+                cmd.addArgument("head -1 " + segFile + " > " + tmpFL);
                 cmd.addArgument("awk -F \"\\t\" -v OFS=\"\\t\" -v j=" + 
-                    getSampleName(segFile, ".sorted.filter.deduped.realign.recal.seg") + 
+                    getSampleName(segFlbasename, ".sorted.filter.deduped.realign.recal.seg") + 
                     " '{ if (NR>1) {print j,\"chr\"$2,$3,$4,$5,$6} }' " + segFile +
                     " >> " + tmpFL);
             } else{
+                tmpFL = this.tmpDir + getSampleName(segFlbasename, ".varscanSomatic_Total_CN.seg") + "sequenza.txt";
+                cmd.addArgument("head -1 " + segFile + " > " + tmpFL);
                 cmd.addArgument("awk -F \"\\t\" -v OFS=\"\\t\" -v j=" + 
-                    getSampleName(segFile, ".seg") + 
+                    getSampleName(segFlbasename, ".varscanSomatic_Total_CN.seg") + 
                     " '{ if (NR>1) {print j,$2,$3,$4,$5,$6} }' " + segFile +
                     " >> " + tmpFL);
             }
         }
-        cmd.addArgument("echo -e \"ID\\tchrom\\tloc.start\\tloc.end\\tnum.mark\\tseg.mean\" > " + combinedSeg + "\n"); 
-        cmd.addArgument("cat $TEMP/*.txt | grep -v \"chrom\" >> " + combinedSeg);
+        cmd.addArgument("echo -e \"ID\\tchrom\\tloc.start\\tloc.end\\tnum.mark\\tseg.mean\" > " + combinedSeg.replace(".seg", ".cnvkit.seg") + "\n"); 
+        cmd.addArgument("echo -e \"ID\\tchrom\\tloc.start\\tloc.end\\tnum.mark\\tseg.mean\" > " + combinedSeg.replace(".seg", ".sequenza.seg") + "\n"); 
+        cmd.addArgument("cat " + this.tmpDir + "/*.sequenza.txt | grep -v \"chrom\" >> " + combinedSeg.replace(".seg", ".sequenza.seg") + "\n");
+        cmd.addArgument("cat " + this.tmpDir + "/*.cnvkit.txt | grep -v \"chrom\" >> " + combinedSeg.replace(".seg", ".cnvkit.seg") + "\n");
         // set additional 
         combineCopySeg.setMaxMemory(Integer.toString(this.cbiowrapMem * 1024));
         combineCopySeg.setQueue(getOptionalProperty("queue", ""));
