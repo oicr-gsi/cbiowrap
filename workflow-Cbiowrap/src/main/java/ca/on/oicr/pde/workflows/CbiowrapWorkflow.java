@@ -62,12 +62,6 @@ public class CbiowrapWorkflow extends OicrWorkflow {
     private String ensembleConversonFile = "/.mounts/labs/TGL/gsi/databases/ensemble_conversion.txt";
     private String blackList ="/.mounts/labs/TGL/gsi/databases/blacklist.txt";
     
-    // additional references (for future use)
-    private String additionalReferences = null;
-    
-    // optional CSV file for human id mapping
-    private String mastersheetCSV = null;
-    
     
     private boolean manualOutput;
     private String queue;
@@ -99,6 +93,12 @@ public class CbiowrapWorkflow extends OicrWorkflow {
             inputCommaSeparatedCopyNumberSegs = getProperty("input_segs");
             inputCommaSeparatedRSEMCounts = getOptionalProperty("input_rsem_counts", "blank");
             inputCommaSeparatedSTARrtabs = getOptionalProperty("input_star_rtabs", "blank");
+            
+            hotspotGenesFile = getProperty("chang_hotspot");
+            oncoKBFile = getProperty("oncokb");
+            ensembleConversonFile = getProperty("ensemble_gene_file");
+            blackList = getProperty("blacklist");
+            
 
             manualOutput = Boolean.parseBoolean(getProperty("manual_output"));
             queue = getOptionalProperty("queue", "");

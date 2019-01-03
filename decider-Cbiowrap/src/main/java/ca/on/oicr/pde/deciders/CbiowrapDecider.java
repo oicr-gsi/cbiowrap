@@ -6,63 +6,54 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.TreeMap;
 import net.sourceforge.seqware.common.hibernate.FindAllTheFiles.Header;
 import net.sourceforge.seqware.common.module.FileMetadata;
 import net.sourceforge.seqware.common.module.ReturnValue;
 import net.sourceforge.seqware.common.util.Log;
-import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.StringUtils;
 
 /**
  *
  * @author prath@oicr.on.ca
  */
-public class PureCNDecider extends OicrDecider {
+public class CbiowrapDecider extends OicrDecider {
 
     private final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
     private Map<String, BeSmall> fileSwaToSmall;
 
-    private String templateType = "EX";
+    private String templateType = "EX,WT";
     private String queue = "";
-   
-    private String bias="/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/mapping_bias_agilent_v6_hg19.rds";
-    private String simp="/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/hg19_simpleRepeats.bed";
-    private String hgbuild="hg19";
-    private String pureCNMem= "32";
-    
-    
-    
-    
-    private HashMap <String, String> fileMap = new HashMap<String, String>();
+    private String studyTitle;
+    private String[] allowedExtensionTypes = {".ReadsPerGene.out.tab", ".genes.results", ".maf.txt.gz", ".seg"};
+    private String studyName;
 
-    private final static String[] VCF_GZ_METATYPES = {"application/vcf-gz", "application/vcf-4-gzip"};
-    private final static String[] CALL_STATS_METATYPES = {"text/plain", "application/txt-gz"};
-    private final static String MODEL_FIT_METATYPE = "application/tar-gzip";
-    private final static String[] METATYPES = (String[])ArrayUtils.addAll(VCF_GZ_METATYPES, CALL_STATS_METATYPES, MODEL_FIT_METATYPE);
-    private String[] allowedExtensions = new String[]{".tar.gz", ".muTect.tumor_only.snvs.vcf.gz", ".muTect.tumor_only.snvs.out", ".muTect.tumor_only.snvs.out.gz"};
-    
+    private final static String TXT_METATYPE = "text/plain";
+//    private String tumorType;
+//    private List<String> results;
+    //private String groupKey;
 
-    public PureCNDecider() {
+    public CbiowrapDecider() {
         super();
         fileSwaToSmall = new HashMap<String, BeSmall>();
         parser.acceptsAll(Arrays.asList("ini-file"), "Optional: the location of the INI file.").withRequiredArg();
         parser.accepts("template-type", "Required. Set the template type to limit the workflow run "
                 + "so that it runs on data only of this template type").withRequiredArg();
-        parser.accepts("queue", "Optional: Set the queue (Default: not set)").withOptionalArg();
-        parser.accepts("bias", "Optional:Provide the path for mapping bias rds. Default " + this.bias).withOptionalArg();
-        parser.accepts("simp", "Optional:Provide the path for simple repeats bed file. Default " + this.simp).withOptionalArg();
-        parser.accepts("hgbuild", "Optional:Provide the hgbuild version. Default " + this.hgbuild).withOptionalArg();
-        parser.accepts("purecn-mem", "Optional:Provide memory requirements for pureCN workfflow. Default " + this.pureCNMem).withOptionalArg();
+        parser.accepts("queue", "Optional: Set the queue (Default: not set)").withRequiredArg();
+        parser.accepts("tumor-type", "Optional: Set tumor tissue type to something other than primary tumor (P), i.e. X . Default: Not set (All)").withRequiredArg();
+        parser.accepts("study-name", "Required. Specify study name, e.g. TGL07, OCT").withRequiredArg();
+        parser.accepts("gmt-file", "Optional. Specify gmt file").withOptionalArg();
+        parser.accepts("ensemble-file", "Optional. Specify ensemble gene text file").withOptionalArg();
     }
 
     @Override
     public ReturnValue init() {
         Log.debug("INIT");
-        this.setMetaType(Arrays.asList(METATYPES));
+        this.setMetaType(Arrays.asList(TXT_METATYPE));
         this.setHeadersToGroupBy(Arrays.asList(Header.FILE_SWA));
 
         ReturnValue rv = super.init();
@@ -78,11 +69,26 @@ public class PureCNDecider extends OicrDecider {
         }
 
         if (this.options.has("template-type")) {
-            this.templateType = options.valueOf("template-type").toString();
-            if (!this.templateType.equals("EX")) {
-                Log.warn("This workflow run may not schedule for --template-type " + this.templateType);
+            if (!options.hasArgument("template-type")) {
+                Log.error("--template-type requires an argument, WT");
+                rv.setExitStatus(ReturnValue.INVALIDARGUMENT);
+                return rv;
+            } else {
+                this.templateType = options.valueOf("template-type").toString();
+                if (!this.templateType.equals("EX,WT")) {
+                    Log.warn("NOTE SPECIFY BOTH template-types SUPPORTED, WE CANNOT GUARANTEE MEANINGFUL RESULTS WITH OTHER TEMPLATE TYPES");
+                }
             }
-        } 
+        }
+        if (this.options.has("study-name")) {
+            if (!options.hasArgument("study-name")) {
+                Log.error("--study-name requires study title, e.g. OCT, TGL07");
+                rv.setExitStatus(ReturnValue.INVALIDARGUMENT);
+                return rv;
+            } else {
+                this.studyTitle = options.valueOf("study-name").toString();
+            }
+        }
         return rv;
     }
 
@@ -97,18 +103,31 @@ public class PureCNDecider extends OicrDecider {
     @Override
     protected ReturnValue doFinalCheck(String commaSeparatedFilePaths, String commaSeparatedParentAccessions) {
         String[] filePaths = commaSeparatedFilePaths.split(",");
+        boolean haveFiles = false;
+        List<String> studyNames = new ArrayList<String>();
         for (String p : filePaths) {
-            if (p.endsWith("vcf.gz")){
-                fileMap.put("VCF", p);
-            }
-            if (p.endsWith(".out") || p.endsWith(".out.gz")){
-                fileMap.put("CALL", p);
-            } 
-            if (p.endsWith("tar.gz")){
-                fileMap.put("MODEL-FIT", p);
+            for (BeSmall bs : fileSwaToSmall.values()) {
+                if (!bs.getPath().equals(p)) {
+                    continue;
+                }
+                String tt = bs.getTissueType();
+
+                if (!tt.isEmpty()) {
+                    haveFiles = true;
+                    String sn = bs.getStudyTitle();
+                    studyNames.add(sn);
+                }
             }
         }
-        return super.doFinalCheck(commaSeparatedFilePaths, commaSeparatedParentAccessions);
+        if (haveFiles) {
+//            this.studyName = 
+            HashSet<String> hsetStudyNames = new HashSet(studyNames);
+            Iterator<String> itr = hsetStudyNames.iterator();
+            this.studyName = itr.next().toString();
+            return super.doFinalCheck(commaSeparatedFilePaths, commaSeparatedParentAccessions);
+        }
+       Log.error("Data not available, WON'T RUN");
+        return new ReturnValue(ReturnValue.INVALIDPARAMETERS);
     }
 
     @Override
@@ -116,21 +135,9 @@ public class PureCNDecider extends OicrDecider {
         Log.debug("CHECK FILE DETAILS:" + fm);
         String currentTtype = returnValue.getAttribute(Header.SAMPLE_TAG_PREFIX.getTitle() + "geo_library_source_template_type");
         String currentTissueType = returnValue.getAttribute(Header.SAMPLE_TAG_PREFIX.getTitle() + "geo_tissue_type");
-        String currentWorkflowName = returnValue.getAttribute(Header.WORKFLOW_NAME.getTitle());
-        String fileMetaType = fm.getMetaType();
 
         if (null == currentTissueType) {
             return false; // we need only those which have their tissue type set
-        }
-        
-        if (!Arrays.asList(METATYPES).contains(fileMetaType)){
-           return false;
-        } else {
-            if (fileMetaType.equals(MODEL_FIT_METATYPE)){
-                if (!currentWorkflowName.equals("CNVkit")){
-                    return false;
-                }
-            }
         }
 
         // Filter the data of a different template type if filter is specified
@@ -146,8 +153,6 @@ public class PureCNDecider extends OicrDecider {
 
     @Override
     public Map<String, List<ReturnValue>> separateFiles(List<ReturnValue> vals, String groupBy) {
-        Log.debug("Number of files from file provenance = " + vals.size());
-
         // get files from study
         Map<String, ReturnValue> iusDeetsToRV = new HashMap<String, ReturnValue>();
         // Override the supplied group-by value
@@ -157,29 +162,34 @@ public class PureCNDecider extends OicrDecider {
 
             for (int f = 0; f < currentRV.getFiles().size(); f++) {
                 try {
-                    if (Arrays.asList(METATYPES).contains(currentRV.getFiles().get(f).getMetaType())) {
+                    if (currentRV.getFiles().get(f).getMetaType().equals(TXT_METATYPE)) {
                         metatypeOK = true;
                     }
-                    
-                    fileExtnOK = this.identifyFilePath(currentRV.getFiles().get(f).getFilePath());
-                    
+                    if (currentRV.getFiles().get(f).getFilePath().endsWith(".ReadsPerGene.out.tab") 
+                            || currentRV.getFiles().get(f).getFilePath().endsWith(".genes.results")
+                            || currentRV.getFiles().get(f).getFilePath().endsWith(".seg")
+                            || currentRV.getFiles().get(f).getFilePath().endsWith(".maf.txt.gz")){
+                        fileExtnOK = true;
+                    } else {
+//                        Log.debug("Undesired file type "+currentRV.getFiles(). get(f).getFilePath());
+                        continue;
+                    }
                 } catch (Exception e) {
                     Log.stderr("Error checking a file");
                 }
             }
-
-            if (!metatypeOK) {
-                continue; // Go to the next value
-            } 
             
-            if (!fileExtnOK) {
+            if (metatypeOK && fileExtnOK) {
+                //
+            } else {
                 continue;
             }
 
             BeSmall currentSmall = new BeSmall(currentRV);
             fileSwaToSmall.put(currentRV.getAttribute(groupBy), currentSmall);
-
-            String fileDeets = currentSmall.getIusDetails();
+            //make sure you only have the most recent single file for each
+            //sequencer run + lane + barcode + workflow-name
+            String fileDeets = currentSmall.getIusDetails() + "_" + currentSmall.getWorkflowDetails();
             Date currentDate = currentSmall.getDate();
 
             //if there is no entry yet, add it
@@ -196,8 +206,9 @@ public class PureCNDecider extends OicrDecider {
                     iusDeetsToRV.put(fileDeets, currentRV);
                 }
             }
+            
         }
-
+        
         //only use those files that entered into the iusDeetsToRV
         //since it's a map, only the most recent values
         List<ReturnValue> newValues = new ArrayList<ReturnValue>(iusDeetsToRV.values());
@@ -205,16 +216,78 @@ public class PureCNDecider extends OicrDecider {
 
         //group files according to the designated header (e.g. sample SWID)
         for (ReturnValue r : newValues) {
+//            String rootSampleName = fileSwaToSmall.get(r.getAttribute(Header.FILE_SWA.getTitle())).getRootSampleName();
             String currVal = fileSwaToSmall.get(r.getAttribute(Header.FILE_SWA.getTitle())).getGroupByAttribute();
+            Log.debug(currVal);
             List<ReturnValue> vs = map.get(currVal);
+            String filePath = r.getFiles().get(0).getFilePath();
             if (vs == null) {
                 vs = new ArrayList<ReturnValue>();
             }
-            vs.add(r);
+            
+            if (filePath.endsWith(".genes.results") || 
+                    filePath.endsWith(".ReadsPerGene.out.tab") ||
+                    filePath.endsWith(".seg") ||
+                    filePath.endsWith(".maf.txt.gz")){
+                    vs.add(r); 
+            } else {
+//                Log.debug("Rejecting " + r.getFiles().get(0).getFilePath() );
+                continue;
+            }
             map.put(currVal, vs);
+            //this.groupKey = currVal;
         }
-
-        return map;
+        
+        Map<String, List<ReturnValue>> filteredMap = new HashMap<String, List<ReturnValue>>();
+        for (Entry<String, List<ReturnValue>> e :  map.entrySet()){
+            String study = e.getKey();
+            List<ReturnValue> mapValues = e.getValue();
+       
+            List<ReturnValue> finalRVs = new ArrayList<ReturnValue>();
+            for (ReturnValue rV : mapValues) {
+                String deets = fileSwaToSmall.get(rV.getAttribute(Header.FILE_SWA.getTitle())).getIusDetails();
+                ArrayList<FileMetadata> filePaths = rV.getFiles();
+                for (FileMetadata fm : filePaths) {
+                    String fileName = fm.getFilePath();
+                    if (fileName.endsWith(".genes.results")) {
+                        Log.debug(deets + ":" + fileName);
+                        ReturnValue rsemMapToDeets = rV;
+                        ReturnValue starMapToDeets = getMappingSTARFileDeets(map, deets, study);
+                        finalRVs.add(rsemMapToDeets);
+                        finalRVs.add(starMapToDeets);
+                    } else if (fileName.endsWith(".maf.txt.gz") || fileName.endsWith(".seg")){
+                        finalRVs.add(rV);
+                    }
+                }
+            }
+            filteredMap.putIfAbsent(study, finalRVs);
+        }
+        return filteredMap;
+    }
+    
+    protected ReturnValue getMappingSTARFileDeets(Map<String, List<ReturnValue>> map, String iusKey, String groupKey){
+        ReturnValue starFilePath = new ReturnValue();
+        List<ReturnValue> mapValues = new ArrayList<ReturnValue>(map.get(groupKey));
+        for (ReturnValue rV : mapValues){
+            String deets = fileSwaToSmall.get(rV.getAttribute(Header.FILE_SWA.getTitle())).getIusDetails();
+            if (deets.equals(iusKey)){
+                ArrayList<FileMetadata> filePaths = rV.getFiles();
+                for (FileMetadata fm : filePaths){
+                    String fileName = fm.getFilePath();
+                    if (fileName.endsWith(".ReadsPerGene.out.tab")){
+                        Log.debug(deets + ":" + fileName);
+                        starFilePath = rV;
+                    } else {
+//                        Log.debug("Reading next ReturnValue rV for the .ReadsPerGene.out.tab file");
+                        continue;
+                    }
+                }
+            } else {
+//                Log.debug("Skipping unmatched " + deets);
+                continue;
+            }
+        }
+        return starFilePath;
     }
 
     @Override
@@ -227,51 +300,71 @@ public class PureCNDecider extends OicrDecider {
         return attribute;
     }
 
+    
+
     @Override
     protected Map<String, String> modifyIniFile(String commaSeparatedFilePaths, String commaSeparatedParentAccessions) {
-        Map<String, String> iniFileMap = super.modifyIniFile(commaSeparatedFilePaths, commaSeparatedParentAccessions);
-        String inVCF = this.fileMap.get("VCF");
-        String outputFileNamePrefix = getExternalName(inVCF);
-        String inCallStats = this.fileMap.get("CALL");
-        String inModelFit = this.fileMap.get("MODEL-FIT");
-        iniFileMap.put("input_vcf", inVCF);
-        iniFileMap.put("call_stats_file", inCallStats);
-        iniFileMap.put("cnvkit_model_fit", inModelFit);
-        iniFileMap.put("output_filename_prefix", outputFileNamePrefix);
-        iniFileMap.put("bias", this.bias);
-        iniFileMap.put("simp", this.simp);
-        iniFileMap.put("hgbuild", this.hgbuild);
-        iniFileMap.put("purecn_mem", this.pureCNMem);
-        return iniFileMap;
-                
 
-//        return super.modifyIniFile(commaSeparatedFilePaths, commaSeparatedParentAccessions);
+        String[] filePaths = commaSeparatedFilePaths.split(",");
+        List<String> rsemGeneCounts = new ArrayList<String>();
+        List<String> starGeneCounts = new ArrayList<String>();
+        List<String> mafFiles = new ArrayList<String>();
+        List<String> segFiles = new ArrayList<String>();
+
+        for (String p : filePaths) {
+
+               for (BeSmall bs : fileSwaToSmall.values()) {
+                String tt = bs.getTissueType();
+                if (!tt.isEmpty()) {
+                    if (!bs.getPath().equals(p)) {
+                        continue;
+                    }
+                    if (p.endsWith(".genes.results")) {
+                        rsemGeneCounts.add(p);
+                    } else if (p.endsWith(".ReadsPerGene.out.tab")){
+                        starGeneCounts.add(p);
+                    } else if (p.endsWith(".seg")){
+                        segFiles.add(p);
+                    } else if (p.endsWith(".maf.txt.gz")){
+                        mafFiles.add(p);
+                    }
+                } else {
+                    Log.error("THE DONOR does not have data to run the workflow");
+                    abortSchedulingOfCurrentWorkflowRun();
+                }
+            }
+
+        }
+        Map<String, String> iniFileMap = super.modifyIniFile(commaSeparatedFilePaths, commaSeparatedParentAccessions);
+
+        iniFileMap.put("data_dir", "data");
+        iniFileMap.put("input_rsem_counts", String.join(",", rsemGeneCounts));
+        iniFileMap.put("input_star_rtabs", String.join(",", starGeneCounts));
+        iniFileMap.put("input_mafs", String.join(",", mafFiles));
+        iniFileMap.put("input_segs", String.join(",", segFiles));
+
+        if (!this.queue.isEmpty()) {
+            iniFileMap.put("queue", this.queue);
+        }
+        iniFileMap.put("study_title", this.studyName);
+
+        //remove input_files, this is handled by rsem_inputs and star_inputs
+        iniFileMap.remove("input_files");
+
+        return iniFileMap;
     }
 
     public static void main(String args[]) {
 
         List<String> params = new ArrayList<String>();
         params.add("--plugin");
-        params.add(PureCNDecider.class.getCanonicalName());
+        params.add(CbiowrapDecider.class.getCanonicalName());
         params.add("--");
         params.addAll(Arrays.asList(args));
         System.out.println("Parameters: " + Arrays.deepToString(params.toArray()));
         net.sourceforge.seqware.pipeline.runner.PluginRunner.main(params.toArray(new String[params.size()]));
 
     }
-    
-    private boolean identifyFilePath(String filePath) {
-        return Arrays.stream(allowedExtensions).anyMatch(entry -> filePath.endsWith(entry));
-    }
-
-    private String getExternalName(String inVCF) {
-        String baseName = FilenameUtils.getBaseName(inVCF);
-        String[] bNames = baseName.split("\\.");
-        String sampleName = bNames[0];
-        return sampleName;
-    }
-
-
     private class BeSmall {
 
         private Date date = null;
@@ -282,8 +375,13 @@ public class PureCNDecider extends OicrDecider {
         private String extName = null;
         private String groupID = null;
         private String groupDescription = null;
-        private String workflowName = null;
+        private String workflowDetails = null;
+        private String sampleNameDetails = null;
+        private String rootSampleName = null;
+        private String studyTitle = null;
 
+        
+        
         public BeSmall(ReturnValue rv) {
             try {
                 date = format.parse(rv.getAttribute(Header.PROCESSING_DATE.getTitle()));
@@ -292,10 +390,14 @@ public class PureCNDecider extends OicrDecider {
                 ex.printStackTrace();
             }
             FileAttributes fa = new FileAttributes(rv, rv.getFiles().get(0));
-            workflowName = rv.getAttribute(Header.WORKFLOW_NAME.getTitle());
-            iusDetails = fa.getLibrarySample() + fa.getSequencerRun() + fa.getLane() + fa.getBarcode();
+            studyTitle = rv.getAttribute(Header.STUDY_TITLE.getTitle());
+            rootSampleName = rv.getAttribute(Header.ROOT_SAMPLE_NAME.getTitle());
+            workflowDetails = rv.getAttribute(Header.WORKFLOW_NAME.getTitle());
+            iusDetails = fa.getLibrarySample() + fa.getSequencerRun() + fa.getLane() + fa.getBarcode(); //+ "_"+ workflowDetails;
+            sampleNameDetails = fa.getLibrarySample() + "_" + fa.getSequencerRun() + fa.getLane() + fa.getBarcode();
             tissueType = fa.getLimsValue(Lims.TISSUE_TYPE);
             extName = rv.getAttribute(Header.SAMPLE_TAG_PREFIX.getTitle() + "geo_external_name");
+            //fa.getLimsValue(Lims.TUBE_ID);
             if (null == extName || extName.isEmpty()) {
                 extName = "NA";
             }
@@ -307,8 +409,23 @@ public class PureCNDecider extends OicrDecider {
             if (null == groupDescription || groupDescription.isEmpty()) {
                 groupDescription = "NA";
             }
-            groupByAttribute = iusDetails + ":" + groupID + ":" + extName;
+            groupByAttribute = fa.getStudy() + ":" + 
+                    fa.getLimsValue(Lims.LIBRARY_TEMPLATE_TYPE) + ":" + 
+                    fa.getMetatype();
             path = rv.getFiles().get(0).getFilePath() + "";
+            
+        }
+
+        public String getRootSampleName() {
+            return rootSampleName;
+        }
+
+        public String getSampleNameDetails() {
+            return sampleNameDetails;
+        }
+
+        public String getWorkflowDetails() {
+            return workflowDetails;
         }
 
         public Date getDate() {
@@ -332,7 +449,7 @@ public class PureCNDecider extends OicrDecider {
         }
 
         public String getIusDetails() {
-            return iusDetails;
+            return this.iusDetails;
         }
 
         public void setIusDetails(String iusDetails) {
@@ -358,17 +475,10 @@ public class PureCNDecider extends OicrDecider {
         public void setPath(String path) {
             this.path = path;
         }
+        public String getStudyTitle() {
+            return studyTitle;
+        }
     }
 
-    /**
-     * Utility function
-     *
-     * @param path
-     * @param extension
-     *
-     * @return
-     */
-    public static String makeBasename(String path, String extension) {
-        return path.substring(path.lastIndexOf("/") + 1, path.lastIndexOf(extension));
-    }
+
 }
