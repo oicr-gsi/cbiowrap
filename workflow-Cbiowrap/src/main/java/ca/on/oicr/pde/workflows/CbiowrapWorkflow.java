@@ -304,8 +304,8 @@ public class CbiowrapWorkflow extends OicrWorkflow {
             cmd.addArgument("ln -s " + mafFile + " " + mafDir + ";\n");
         }
 //        cmd.addArgument("cd " + mafDir);
-        cmd.addArgument("zcat $(ls " + mafDir + "/*.maf.gz | head -1) | awk 'NR == 2' > " + combinedMaf + ";\n");
-        cmd.addArgument("for i in $(ls " + mafDir + "/*.maf.gz); do `zcat $i | awk 'NR > 2' >> " + combinedMaf + "`;done");
+        cmd.addArgument("zcat $(ls " + mafDir + "/*.maf.txt.gz | head -1) | awk 'NR == 2' > " + combinedMaf + ";\n");
+        cmd.addArgument("for i in $(ls " + mafDir + "/*.maf.txt.gz); do `zcat $i | awk 'NR > 2' >> " + combinedMaf + "`;done");
         // set additional 
         linkMAF.setMaxMemory(Integer.toString(this.cbiowrapMem * 1024));
         linkMAF.setQueue(getOptionalProperty("queue", ""));
