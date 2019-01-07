@@ -154,9 +154,13 @@ public class CbiowrapWorkflow extends OicrWorkflow {
         if (!this.inputCommaSeparatedRSEMCounts.equals("blank") || !this.inputCommaSeparatedSTARrtabs.equals("blank")) {
             Map<String, List<String>> inputFileMap = this.getRsemStarMap(this.inputCommaSeparatedRSEMCounts, this.inputCommaSeparatedSTARrtabs);
             this.keySet = inputFileMap.keySet();
-            for (String key : keySet) {
-                SqwFile file0 = this.createFile("RSEM_" + key);
-                SqwFile file1 = this.createFile("STAR_" + key);
+            List<String> keyList = new ArrayList<>(keySet);
+            nRCs = keyList.size();
+            for (int nrc = 0; nrc < nRCs; nrc++) {
+                String key = keyList.get(nrc);
+                Log.info(key);
+                SqwFile file0 = this.createFile("inputRCOUNTs_" + Integer.toString(nrc));
+                SqwFile file1 = this.createFile("inputRTABs_" + Integer.toString(nrc));
                 String rsemFile = inputFileMap.get(key).get(0);
                 String starFile = inputFileMap.get(key).get(1);
                 file0.setSourcePath(rsemFile);
@@ -215,15 +219,15 @@ public class CbiowrapWorkflow extends OicrWorkflow {
         String postprocRC = null;
         if (!this.inputCommaSeparatedRSEMCounts.equals("blank") || !this.inputCommaSeparatedSTARrtabs.equals("blank")) {
             // read RTABs
-            for (int itx = 0; itx <= nRCs; itx++) {
-                String inRT = getFiles().get("inputRTABs" + Integer.toString(itx)).getProvisionedPath();
+            for (int itx = 0; itx < nRCs; itx++) {
+                String inRT = getFiles().get("inputRTABs_" + Integer.toString(itx)).getProvisionedPath();
                 inputRtabs.add(inRT);
             }
             String csInRTs = inputRtabs.toString().replace(", ", ",").replaceAll("[\\[\\]]", "");
             
             // read Rcounts
-            for (int irx = 0; irx <= nRCs; irx++) {
-                String inRC = getFiles().get("inputRCOUNTs" + Integer.toString(irx)).getProvisionedPath();
+            for (int irx = 0; irx < nRCs; irx++) {
+                String inRC = getFiles().get("inputRCOUNTs_" + Integer.toString(irx)).getProvisionedPath();
                 inputRcounts.add(inRC);
             }
             // post process Rcounts 
@@ -351,19 +355,19 @@ public class CbiowrapWorkflow extends OicrWorkflow {
         Job postProcessRSEMGeneCounts = getWorkflow().createBashJob("post_process_RSEM");
         Command cmd = postProcessRSEMGeneCounts.getCommand();
         Map<String, List<String>> map = this.getRsemStarMap(inRSEMs, inSTARs);
-        for (String key: map.keySet()){
+        List<String> keyList = new ArrayList<>(map.keySet());
+        int kSz = keyList.size();
+        for (int ks = 0; ks < kSz; ks++) {
+            String key = keyList.get(ks);
             String geneCount = this.tmpDir + key + ".count";
             String geneRcount = this.tmpDir + key + ".rcount";
             String geneTPM = this.tmpDir + key + ".tpm";
             String geneFPKM = this.tmpDir + key + ".fpkm";
-           
-            String geneFPKMs = getFiles().get("RSEM_" + key + "_FPKM").getProvisionedPath();
-            String geneTPMs = getFiles().get("RSEM_" + key + "_TPM").getProvisionedPath();
-            cmd.addArgument("echo \"" + key + "\"" + ">" + geneTPM + "; cut -f6 " + geneTPMs + " | awk 'NR>1' >> " + geneTPM + ";\n");
-            cmd.addArgument("echo \"" + key + "\"" + ">" + geneFPKM + "; cut -f6 " + geneFPKMs + " | awk 'NR>1' >> " + geneFPKM + ";\n");
             // rcounts
-            String geneCounts = getFiles().get("RSEM_" + key + "_COUNTS").getProvisionedPath();
-            String rtab = getFiles().get("STAR_"+key).getProvisionedPath();
+            String geneCounts = getFiles().get("inputRCOUNTs_" + Integer.toString(ks)).getProvisionedPath();
+            cmd.addArgument("echo \"" + key + "\"" + ">" + geneTPM + "; cut -f6 " + geneCounts + " | awk 'NR>1' >> " + geneTPM + ";\n");
+            cmd.addArgument("echo \"" + key + "\"" + ">" + geneFPKM + "; cut -f7 " + geneCounts + " | awk 'NR>1' >> " + geneFPKM + ";\n");
+            String rtab = getFiles().get("inputRTABs_" + Integer.toString(ks)).getProvisionedPath();
             cmd.addArgument("echo \"" + key + "\" > " + geneCount + ";");
             cmd.addArgument("cut -f5 " + geneCounts + " | awk 'NR>1' >> " + geneCount + ";");
             cmd.addArgument("echo \"" + key + "\" > " 
