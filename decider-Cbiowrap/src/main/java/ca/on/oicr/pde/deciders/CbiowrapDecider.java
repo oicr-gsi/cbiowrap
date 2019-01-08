@@ -101,6 +101,13 @@ public class CbiowrapDecider extends OicrDecider {
         if (this.options.has("onco-kb")) {
             this.oncoKB = options.valueOf("onco-kb").toString();
         }
+        if (this.options.has("hotspot-genes")) {
+            this.hotSpotGenes = options.valueOf("hotspot-genes").toString();
+        }
+        if (this.options.has("blacklist-tsv")) {
+            this.blackList = options.valueOf("blacklist-tsv").toString();
+        }
+        
         return rv;
     }
 
@@ -350,8 +357,12 @@ public class CbiowrapDecider extends OicrDecider {
         Map<String, String> iniFileMap = super.modifyIniFile(commaSeparatedFilePaths, commaSeparatedParentAccessions);
 
         iniFileMap.put("data_dir", "data");
-        iniFileMap.put("input_rsem_counts", String.join(",", rsemGeneCounts));
-        iniFileMap.put("input_star_rtabs", String.join(",", starGeneCounts));
+        if (!rsemGeneCounts.isEmpty()){
+            iniFileMap.put("input_rsem_counts", String.join(",", rsemGeneCounts));
+        }
+        if (!starGeneCounts.isEmpty()){
+            iniFileMap.put("input_star_rtabs", String.join(",", starGeneCounts));
+        }
         iniFileMap.put("input_mafs", String.join(",", mafFiles));
         iniFileMap.put("input_segs", String.join(",", segFiles));
 
@@ -359,6 +370,10 @@ public class CbiowrapDecider extends OicrDecider {
             iniFileMap.put("queue", this.queue);
         }
         iniFileMap.put("study_title", this.studyName);
+        iniFileMap.put("blacklist", this.blackList);
+        iniFileMap.put("ensemble_gene_file", this.ensFile);
+        iniFileMap.put("oncokb", this.oncoKB);
+        iniFileMap.put("chang_hotspot", this.hotSpotGenes);
 
         //remove input_files, this is handled by rsem_inputs and star_inputs
         iniFileMap.remove("input_files");
