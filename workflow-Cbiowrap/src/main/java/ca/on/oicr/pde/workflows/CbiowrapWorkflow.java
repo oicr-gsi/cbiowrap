@@ -375,7 +375,8 @@ public class CbiowrapWorkflow extends OicrWorkflow {
                     + ";");
             cmd.addArgument("awk 'NR>4 {if ($4 >= $3) print $4; else print $3}' " 
                     + rtab + " >> " + geneRcount + ";");
-            cmd.addArgument("cp " + rtab + " " + this.tmpDir + ";");
+            cmd.addArgument("ln -s " + "`pwd`" + rtab + " " + this.tmpDir + ";");
+            cmd.addArgument("ln -s " + "`pwd`" + geneCounts + " " + this.tmpDir + ";");
         }
         cmd.addArgument("RSEMG=`ls " + this.tmpDir + "*.genes.results | head -1`; if [ ! -z $RSEMG ]; then cut -f1 $RSEMG > " + this.tmpDir + "genes; fi;\n"); 
         cmd.addArgument("STARG=`ls " + this.tmpDir + "*.tab | head -1`;");
