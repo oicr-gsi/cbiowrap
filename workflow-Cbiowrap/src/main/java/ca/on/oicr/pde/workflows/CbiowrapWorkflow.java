@@ -325,14 +325,14 @@ public class CbiowrapWorkflow extends OicrWorkflow {
             String segFlbasename = segFLdeet.getName();
             String tmpFL;
             if (segFile.endsWith(".sorted.filter.deduped.realign.recal.seg")){
-                tmpFL = this.tmpDir + getSampleName(segFlbasename, ".sorted.filter.deduped.realign.recal.seg") + "cnvkit.txt";
+                tmpFL = this.tmpDir + getSampleName(segFlbasename, ".sorted.filter.deduped.realign.recal.seg") + ".cnvkit.txt";
                 cmd.addArgument("head -1 " + segFile + " > " + tmpFL + ";\n");
                 cmd.addArgument("awk -F \"\\t\" -v OFS=\"\\t\" -v j=" + 
                     getSampleName(segFlbasename, ".sorted.filter.deduped.realign.recal.seg") + 
                     " '{ if (NR>1) {print j,\"chr\"$2,$3,$4,$5,$6} }' " + segFile +
                     " >> " + tmpFL + ";\n");
             } else{
-                tmpFL = this.tmpDir + getSampleName(segFlbasename, ".varscanSomatic_Total_CN.seg") + "sequenza.txt";
+                tmpFL = this.tmpDir + getSampleName(segFlbasename, ".varscanSomatic_Total_CN.seg") + ".sequenza.txt";
                 cmd.addArgument("head -1 " + segFile + " > " + tmpFL + ";\n");
                 cmd.addArgument("awk -F \"\\t\" -v OFS=\"\\t\" -v j=" + 
                     getSampleName(segFlbasename, ".varscanSomatic_Total_CN.seg") + 
