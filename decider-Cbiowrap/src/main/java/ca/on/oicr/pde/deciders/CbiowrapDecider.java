@@ -27,9 +27,11 @@ public class CbiowrapDecider extends OicrDecider {
     private Map<String, BeSmall> fileSwaToSmall;
 
     private String templateType = "EX,WT";
+    private String[] allowedTemplateTypes = {"EX", "WT"};
     private String queue = "";
     private String[] allowedExtensionTypes = {".ReadsPerGene.out.tab", ".genes.results", ".maf.txt.gz", ".seg"};
     private String studyName;
+    private String studyTitle;
     private String hotSpotGenes = "/.mounts/labs/TGL/gsi/databases/20161121_Chang_hotspot_list.tsv";
     private String ensFile = "/.mounts/labs/TGL/gsi/databases/ensemble_conversion.txt";
     private String oncoKB = "/.mounts/labs/TGL/gsi/databases/20170412_oncoKB.tsv";
@@ -74,15 +76,16 @@ public class CbiowrapDecider extends OicrDecider {
         }
 
         if (this.options.has("template-type")) {
-            if (!options.hasArgument("template-type")) {
-                Log.error("--template-type requires an argument, WT");
-                rv.setExitStatus(ReturnValue.INVALIDARGUMENT);
-                return rv;
-            } else {
-                this.templateType = options.valueOf("template-type").toString();
-                if (!this.templateType.equals("EX,WT")) {
-                    Log.warn("NOTE SPECIFY BOTH template-types SUPPORTED, WE CANNOT GUARANTEE MEANINGFUL RESULTS WITH OTHER TEMPLATE TYPES");
+            String enteredTemplateTypes = options.valueOf("template-type").toString();
+            String[] inputTT = enteredTemplateTypes.split(",");
+            for (String tt : inputTT) {
+                if (!Arrays.asList(this.allowedTemplateTypes).contains(tt)) {
+                    Log.warn("Template type not in the list of allowed templates. Works best for template types WT and EX");
                 }
+            }
+            this.templateType = enteredTemplateTypes;
+            if (!this.templateType.equals("EX,WT")) {
+                Log.warn("NOTE SPECIFY BOTH template-types SUPPORTED, WE CANNOT GUARANTEE MEANINGFUL RESULTS WITH OTHER TEMPLATE TYPES");
             }
         }
         if (this.options.has("study-name")) {
@@ -91,7 +94,7 @@ public class CbiowrapDecider extends OicrDecider {
                 rv.setExitStatus(ReturnValue.INVALIDARGUMENT);
                 return rv;
             } else {
-                this.studyName = options.valueOf("study-name").toString();
+                this.studyTitle = options.valueOf("study-name").toString();
             }
         }
         
@@ -160,7 +163,7 @@ public class CbiowrapDecider extends OicrDecider {
         }
 
         // Filter the data of a different template type if filter is specified
-        if (!this.templateType.equalsIgnoreCase(currentTtype)) {
+        if (!Arrays.asList(this.allowedTemplateTypes).contains(currentTtype)) {
             Log.warn("Excluding file with SWID = [" + returnValue.getAttribute(Header.FILE_SWA.getTitle())
                     + "] due to template type/geo_library_source_template_type = [" + currentTtype + "]");
             return false;
@@ -332,7 +335,7 @@ public class CbiowrapDecider extends OicrDecider {
 
         for (String p : filePaths) {
 
-               for (BeSmall bs : fileSwaToSmall.values()) {
+            for (BeSmall bs : fileSwaToSmall.values()) {
                 String tt = bs.getTissueType();
                 if (!tt.isEmpty()) {
                     if (!bs.getPath().equals(p)) {
@@ -340,11 +343,11 @@ public class CbiowrapDecider extends OicrDecider {
                     }
                     if (p.endsWith(".genes.results")) {
                         rsemGeneCounts.add(p);
-                    } else if (p.endsWith(".ReadsPerGene.out.tab")){
+                    } else if (p.endsWith(".ReadsPerGene.out.tab")) {
                         starGeneCounts.add(p);
-                    } else if (p.endsWith(".seg")){
+                    } else if (p.endsWith(".seg")) {
                         segFiles.add(p);
-                    } else if (p.endsWith(".maf.txt.gz")){
+                    } else if (p.endsWith(".maf.txt.gz")) {
                         mafFiles.add(p);
                     }
                 } else {
@@ -436,8 +439,7 @@ public class CbiowrapDecider extends OicrDecider {
             if (null == groupDescription || groupDescription.isEmpty()) {
                 groupDescription = "NA";
             }
-            groupByAttribute = fa.getStudy() + ":" + 
-                    fa.getLimsValue(Lims.LIBRARY_TEMPLATE_TYPE) + ":" + 
+            groupByAttribute = fa.getStudy() + ":" +  
                     fa.getMetatype();
             path = rv.getFiles().get(0).getFilePath() + "";
             

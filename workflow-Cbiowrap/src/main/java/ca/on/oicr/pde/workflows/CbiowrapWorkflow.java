@@ -188,9 +188,9 @@ public class CbiowrapWorkflow extends OicrWorkflow {
             inputMafs.add(inMAF);
         }
         // post process MAFs (copy to tmp directory)
-        String mafDir = this.dataDir + "MAF";
+        String mafDir = this.tmpDir + "MAF";
         String inMAFs = inputMafs.toString().replace(", ", ",").replaceAll("[\\[\\]]", "");
-        String combinedMaf = this.tmpDir + outputFileNamePrefix + "_combined_raw.maf.txt";
+        String combinedMaf = this.dataDir + outputFileNamePrefix + "_combined_raw.maf.txt";
         Job createMafDir = linkMAFs(mafDir, inMAFs, combinedMaf);
         parentJob = createMafDir;
         
@@ -200,18 +200,14 @@ public class CbiowrapWorkflow extends OicrWorkflow {
             inputSegs.add(inSEG);
         }
         // post process Segs into a single file
-        String combinedSegFile = this.tmpDir + outputFileNamePrefix  + "_copynumber.txt";
+        String combinedSegFile = this.dataDir + outputFileNamePrefix  + "_copynumber.seg";
         String inSegFiles = inputSegs.toString().replace(", ", ",").replaceAll("[\\[\\]]", "");
         Job generateCombinedCopySeg = copySegProcess(inSegFiles, combinedSegFile);
         // provision out combined seg file
-        String cnvKitSegFile = combinedSegFile.replace(".txt", ".cnvkit.seg");
-        String sequenzaSegFile = combinedSegFile.replace(".txt", ".sequenza.seg");
-        SqwFile copyCNVkitSegSqw = createOutputFile(cnvKitSegFile, TEXT_METATYPE, this.manualOutput);
-        copyCNVkitSegSqw.getAnnotations().put("CNVKIT_SEG", "cbiowrap");
-        generateCombinedCopySeg.addFile(copyCNVkitSegSqw);
-        SqwFile copySequenzaSegSqw = createOutputFile(sequenzaSegFile, TEXT_METATYPE, this.manualOutput);
-        copySequenzaSegSqw.getAnnotations().put("SEQZ_SEG", "cbiowrap");
-        generateCombinedCopySeg.addFile(copySequenzaSegSqw);
+        SqwFile copySegSqw = createOutputFile(combinedSegFile, TEXT_METATYPE, this.manualOutput);
+        copySegSqw.getAnnotations().put("CNVKIT_SEG", "cbiowrap");
+        generateCombinedCopySeg.addFile(copySegSqw);
+
   
         generateCombinedCopySeg.addParent(parentJob);
         parentJob = generateCombinedCopySeg;
@@ -340,11 +336,15 @@ public class CbiowrapWorkflow extends OicrWorkflow {
                     " >> " + tmpFL + ";\n");
             }
         }
-        cmd.addArgument("echo -e \"ID\\tchrom\\tloc.start\\tloc.end\\tnum.mark\\tseg.mean\" > " + combinedSeg.replace(".seg", ".cnvkit.seg") + "\n"); 
-        cmd.addArgument("echo -e \"ID\\tchrom\\tloc.start\\tloc.end\\tnum.mark\\tseg.mean\" > " + combinedSeg.replace(".seg", ".sequenza.seg") + "\n"); 
+        cmd.addArgument("echo -e \"ID\\tchrom\\tloc.start\\tloc.end\\tnum.mark\\tseg.mean\" > " + combinedSeg.replace(".seg", "_txt") + "\n"); 
         cmd.addArgument("for seqz in `ls " + this.tmpDir + "*.sequenza.txt`; do if [[ -f $seqz ]]; then cat $seqz | grep -v \"chrom\" >> " + combinedSeg.replace(".seg", ".sequenza.seg") + "; fi; done" + "\n");
         cmd.addArgument("for ceqz in `ls " + this.tmpDir + "*.cnvkit.txt`;do if [[ -f $ceqz ]]; then cat $ceqz | grep -v \"chrom\" >> " + combinedSeg.replace(".seg", ".cnvkit.seg") + "; fi; done" + "\n");
-        // set additional 
+        // only prov out seqz if both present; or cnvkit if seqz absent
+        cmd.addArgument("if [[ -f " + combinedSeg.replace(".seg", ".sequenza.seg") + " ]]; then `cat " + combinedSeg.replace(".seg", "_txt") + " " + 
+                combinedSeg.replace(".seg", ".sequenza.seg") + " > " + 
+                combinedSeg +"`;else `cat " + combinedSeg.replace(".seg", "_txt") + 
+                " " + combinedSeg.replace(".seg", ".cnvkit.seg") + " > " + combinedSeg + 
+                "`;fi");
         combineCopySeg.setMaxMemory(Integer.toString(this.cbiowrapMem * 1024));
         combineCopySeg.setQueue(getOptionalProperty("queue", ""));
         return combineCopySeg;
