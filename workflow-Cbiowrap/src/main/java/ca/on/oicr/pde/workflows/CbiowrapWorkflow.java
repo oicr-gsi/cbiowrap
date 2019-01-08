@@ -377,8 +377,9 @@ public class CbiowrapWorkflow extends OicrWorkflow {
                     + rtab + " >> " + geneRcount + ";");
             cmd.addArgument("cp " + rtab + " " + this.tmpDir + ";");
         }
+        cmd.addArgument("RSEMG=`ls " + this.tmpDir + "*.genes.results | head -1`; if [ ! -z $RSEMG ]; then cut -f1 $RSEMG > " + this.tmpDir + "genes; fi;\n"); 
         cmd.addArgument("STARG=`ls " + this.tmpDir + "*.tab | head -1`;");
-        cmd.addArgument("if [ ! -z $STARG ]; then awk 'NR>3 {print $1}' $STARG | sed \"s/N\\_ambiguous/gene\\_id/\" > " + this.tmpDir + "sgene; fi;");
+        cmd.addArgument("if [ ! -z $STARG ]; then awk 'NR>3 {print $1}' $STARG | sed \"s/N\\_ambiguous/gene\\_id/\" > " + this.tmpDir + "sgene; fi;\n");
         cmd.addArgument("paste " + this.tmpDir + "sgene " + this.tmpDir + "*.rcount > " + postProcessedRSEM + ";\n");
         cmd.addArgument("paste " + this.tmpDir + "genes " + this.tmpDir + "*.tpm > " + postProcessedRSEM.replace("_RCOUNT.txt", "_GENES_TPM.txt"));
         cmd.addArgument("paste " + this.tmpDir + "genes " + this.tmpDir + "*.fpkm > " + postProcessedRSEM.replace("_RCOUNT.txt", "_GENES_FPKM.txt"));
