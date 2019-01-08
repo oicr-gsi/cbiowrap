@@ -305,7 +305,7 @@ public class CbiowrapWorkflow extends OicrWorkflow {
         Command cmd = linkMAF.getCommand();
         cmd.addArgument("mkdir -p " + mafDir + ";\n");
         for (String mafFile : mafFiles){
-            cmd.addArgument("ln -s " + mafFile + " " + mafDir + ";\n");
+            cmd.addArgument("ln -s `pwd`/" + mafFile + " " + mafDir + ";\n");
         }
 //        cmd.addArgument("cd " + mafDir);
         cmd.addArgument("zcat $(ls " + mafDir + "/*.maf.txt.gz | head -1) | awk 'NR == 2' > " + combinedMaf + ";\n");

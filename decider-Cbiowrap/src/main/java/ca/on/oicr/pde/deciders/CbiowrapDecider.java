@@ -28,9 +28,12 @@ public class CbiowrapDecider extends OicrDecider {
 
     private String templateType = "EX,WT";
     private String queue = "";
-    private String studyTitle;
     private String[] allowedExtensionTypes = {".ReadsPerGene.out.tab", ".genes.results", ".maf.txt.gz", ".seg"};
     private String studyName;
+    private String hotSpotGenes = "/.mounts/labs/TGL/gsi/databases/20161121_Chang_hotspot_list.tsv";
+    private String ensFile = "/.mounts/labs/TGL/gsi/databases/ensemble_conversion.txt";
+    private String oncoKB = "/.mounts/labs/TGL/gsi/databases/20170412_oncoKB.tsv";
+    private String blackList = "/.mounts/labs/TGL/gsi/databases/blacklist.txt";
 
     private final static String TXT_METATYPE = "text/plain";
 //    private String tumorType;
@@ -44,10 +47,12 @@ public class CbiowrapDecider extends OicrDecider {
         parser.accepts("template-type", "Required. Set the template type to limit the workflow run "
                 + "so that it runs on data only of this template type").withRequiredArg();
         parser.accepts("queue", "Optional: Set the queue (Default: not set)").withRequiredArg();
-        parser.accepts("tumor-type", "Optional: Set tumor tissue type to something other than primary tumor (P), i.e. X . Default: Not set (All)").withRequiredArg();
         parser.accepts("study-name", "Required. Specify study name, e.g. TGL07, OCT").withRequiredArg();
-        parser.accepts("gmt-file", "Optional. Specify gmt file").withOptionalArg();
+        parser.accepts("template-type", "Optional. Specify template-type. Default WT,EX").withOptionalArg();
         parser.accepts("ensemble-file", "Optional. Specify ensemble gene text file").withOptionalArg();
+        parser.accepts("hotspot-genes", "Optional. Specify ensemble gene text file").withOptionalArg();
+        parser.accepts("blacklist-tsv", "Optional. Specify ensemble gene text file").withOptionalArg();
+        parser.accepts("onco-kb", "Optional. Specify ensemble gene text file").withOptionalArg();
     }
 
     @Override
@@ -86,8 +91,15 @@ public class CbiowrapDecider extends OicrDecider {
                 rv.setExitStatus(ReturnValue.INVALIDARGUMENT);
                 return rv;
             } else {
-                this.studyTitle = options.valueOf("study-name").toString();
+                this.studyName = options.valueOf("study-name").toString();
             }
+        }
+        
+        if (this.options.has("ensemble-file")) {
+            this.ensFile = options.valueOf("ensemble-file").toString();
+        }
+        if (this.options.has("onco-kb")) {
+            this.oncoKB = options.valueOf("onco-kb").toString();
         }
         return rv;
     }
