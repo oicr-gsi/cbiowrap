@@ -343,7 +343,7 @@ public class CbiowrapWorkflow extends OicrWorkflow {
         cmd.addArgument("echo -e \"ID\\tchrom\\tloc.start\\tloc.end\\tnum.mark\\tseg.mean\" > " + combinedSeg.replace(".seg", ".cnvkit.seg") + "\n"); 
         cmd.addArgument("echo -e \"ID\\tchrom\\tloc.start\\tloc.end\\tnum.mark\\tseg.mean\" > " + combinedSeg.replace(".seg", ".sequenza.seg") + "\n"); 
         cmd.addArgument("for seqz in `ls " + this.tmpDir + "*.sequenza.txt`; do if [[ -f $seqz ]]; then cat $seqz | grep -v \"chrom\" >> " + combinedSeg.replace(".seg", ".sequenza.seg") + "; fi; done" + "\n");
-        cmd.addArgument("for ceqz in `ls " + this.tmpDir + "*.cnvkit.txt ]];do if [[ -f $ceqz ]]; then cat $ceqz | grep -v \"chrom\" >> " + combinedSeg.replace(".seg", ".cnvkit.seg") + "; fi; done" + "\n");
+        cmd.addArgument("for ceqz in `ls " + this.tmpDir + "*.cnvkit.txt`;do if [[ -f $ceqz ]]; then cat $ceqz | grep -v \"chrom\" >> " + combinedSeg.replace(".seg", ".cnvkit.seg") + "; fi; done" + "\n");
         // set additional 
         combineCopySeg.setMaxMemory(Integer.toString(this.cbiowrapMem * 1024));
         combineCopySeg.setQueue(getOptionalProperty("queue", ""));
