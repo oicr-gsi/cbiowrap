@@ -38,6 +38,8 @@ public class CbiowrapDecider extends OicrDecider {
     private String blackList = "/.mounts/labs/TGL/gsi/databases/blacklist.txt";
 
     private final static String TXT_METATYPE = "text/plain";
+    private final static String TXT_GZ_METATYPE = "application/txt-gz";
+    private final String[] allowedMetatypes = {"text/plain", "application/txt-gz"};
 //    private String tumorType;
 //    private List<String> results;
     //private String groupKey;
@@ -60,7 +62,7 @@ public class CbiowrapDecider extends OicrDecider {
     @Override
     public ReturnValue init() {
         Log.debug("INIT");
-        this.setMetaType(Arrays.asList(TXT_METATYPE));
+        this.setMetaType(Arrays.asList(allowedMetatypes));
         this.setHeadersToGroupBy(Arrays.asList(Header.FILE_SWA));
 
         ReturnValue rv = super.init();
