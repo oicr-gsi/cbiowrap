@@ -267,29 +267,32 @@ public class CbiowrapWorkflow extends OicrWorkflow {
     }
     
     private Job runCbioWrap(String combinedMaf, String segFile, String gepFile, String cbiowrapDir) {
+        String inGepFile = "`pwd`/" + gepFile;
+        String inSegFile = "`pwd`/" + segFile;
+        String inMafFile = "`pwd`/" + combinedMaf;
         if (gepFile == null){
-            gepFile = "blank";
+            inGepFile = "blank";
         }
         if (segFile == null){
-            segFile = "blank";
+            inSegFile = "blank";
         }
         if (combinedMaf == null){
-            combinedMaf = "blank";
+            inMafFile = "blank";
         }
         Job cbioWrap = getWorkflow().createBashJob("cbioWrap");
         Command cmd = cbioWrap.getCommand();
         cmd.addArgument(this.rPath + "/bin/Rscript " + this.cbioWrapper);
         cmd.addArgument(this.cbioWrapPath);
-        cmd.addArgument(cbiowrapDir);
-        cmd.addArgument(combinedMaf);
-        cmd.addArgument(segFile);
-        cmd.addArgument(gepFile);
+        cmd.addArgument("`pwd`/" + cbiowrapDir);
+        cmd.addArgument(inMafFile);
+        cmd.addArgument(inSegFile);
+        cmd.addArgument(inGepFile);
         cmd.addArgument(this.hotspotGenesFile);
         cmd.addArgument(this.oncoKBFile);
         cmd.addArgument(this.ensembleConversonFile);
         cmd.addArgument(this.blackList + ";\n");
         // set additional 
-        cmd.addArgument("tar -zcvf " + cbiowrapDir + ".tar.gz" + " " + cbiowrapDir);
+        cmd.addArgument("cd " + this.dataDir + "; "  + "tar -zcvf " + "`pwd`/" + cbiowrapDir + ".tar.gz" + " " + cbiowrapDir.split("/")[1]);
         cbioWrap.setMaxMemory(Integer.toString(this.cbiowrapMem * 1024));
         cbioWrap.setQueue(getOptionalProperty("queue", ""));
         return cbioWrap;
@@ -375,8 +378,8 @@ public class CbiowrapWorkflow extends OicrWorkflow {
                     + ";");
             cmd.addArgument("awk 'NR>4 {if ($4 >= $3) print $4; else print $3}' " 
                     + rtab + " >> " + geneRcount + ";");
-            cmd.addArgument("ln -s " + "`pwd`" + rtab + " " + this.tmpDir + ";");
-            cmd.addArgument("ln -s " + "`pwd`" + geneCounts + " " + this.tmpDir + ";");
+            cmd.addArgument("cp " + "`pwd`/" + rtab + " " + this.tmpDir + ";");
+            cmd.addArgument("cp " + "`pwd`/" + geneCounts + " " + this.tmpDir + ";");
         }
         cmd.addArgument("RSEMG=`ls " + this.tmpDir + "*.genes.results | head -1`; if [ ! -z $RSEMG ]; then cut -f1 $RSEMG > " + this.tmpDir + "genes; fi;\n"); 
         cmd.addArgument("STARG=`ls " + this.tmpDir + "*.tab | head -1`;");
