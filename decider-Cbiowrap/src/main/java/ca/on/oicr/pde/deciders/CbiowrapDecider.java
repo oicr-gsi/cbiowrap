@@ -442,7 +442,7 @@ public class CbiowrapDecider extends OicrDecider {
                 groupDescription = "NA";
             }
             groupByAttribute = fa.getStudy() + ":" +  
-                    fa.getMetatype();
+                    fa.getMetatype() + ":" + workflowDetails;
             path = rv.getFiles().get(0).getFilePath() + "";
             
         }
