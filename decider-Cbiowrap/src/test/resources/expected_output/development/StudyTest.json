@@ -1,0 +1,3265 @@
+{
+  "workflowRunCount" : 1,
+  "studies" : [ "TGL07" ],
+  "sequencerRuns" : [ "171013_D00343_0195_BCBGVHANXX", "171122_NB551051_0036_AHLKN7AFXX", "171122_NB551056_0033_AHKMWKAFXX", "171123_NB551051_0037_AHL5HNAFXX", "171123_NB551056_0034_AHL5HTAFXX", "171129_NB551051_0040_AH53W3BGX5", "171129_NB551056_0037_AH557VBGX5", "171206_D00331_0288_ACBG0BANXX", "171206_D00331_0289_BCBH0FANXX", "180109_NB551056_0039_AH5JC2BGX5", "180319_NB551056_0049_AHLKVJBGX5" ],
+  "lanes" : [ "171013_D00343_0195_BCBGVHANXX_lane_5", "171013_D00343_0195_BCBGVHANXX_lane_6", "171013_D00343_0195_BCBGVHANXX_lane_7", "171013_D00343_0195_BCBGVHANXX_lane_8", "171122_NB551051_0036_AHLKN7AFXX_lane_1", "171122_NB551056_0033_AHKMWKAFXX_lane_1", "171123_NB551051_0037_AHL5HNAFXX_lane_1", "171123_NB551056_0034_AHL5HTAFXX_lane_1", "171129_NB551051_0040_AH53W3BGX5_lane_1", "171129_NB551056_0037_AH557VBGX5_lane_1", "171206_D00331_0288_ACBG0BANXX_lane_5", "171206_D00331_0288_ACBG0BANXX_lane_6", "171206_D00331_0288_ACBG0BANXX_lane_7", "171206_D00331_0288_ACBG0BANXX_lane_8", "171206_D00331_0289_BCBH0FANXX_lane_1", "171206_D00331_0289_BCBH0FANXX_lane_2", "180109_NB551056_0039_AH5JC2BGX5_lane_1", "180319_NB551056_0049_AHLKVJBGX5_lane_1" ],
+  "samples" : [ "TGL07_0001_Lu_M_PE_292_WT", "TGL07_0001_Lu_M_PE_387_EX", "TGL07_0001_Pb_R_PE_523_EX", "TGL07_0002_Pb_R_PE_526_EX", "TGL07_0002_Sb_P_PE_294_WT", "TGL07_0002_Sb_P_PE_390_EX", "TGL07_0003_Pb_R_PE_524_EX", "TGL07_0003_Ut_P_PE_272_WT", "TGL07_0003_Ut_P_PE_324_EX", "TGL07_0004_Ov_P_PE_289_WT", "TGL07_0004_Ov_P_PE_443_EX", "TGL07_0004_Pb_R_PE_522_EX", "TGL07_0005_Om_M_PE_303_WT", "TGL07_0005_Om_M_PE_462_EX", "TGL07_0005_Pb_R_PE_510_EX", "TGL07_0006_Lv_M_PE_288_WT", "TGL07_0006_Lv_M_PE_482_EX", "TGL07_0006_Pb_R_PE_527_EX", "TGL07_0007_Bn_M_PE_304_WT", "TGL07_0007_Bn_M_PE_476_EX", "TGL07_0007_Pb_R_PE_523_EX", "TGL07_0008_Pb_R_PE_524_EX", "TGL07_0008_Sk_P_PE_280_WT", "TGL07_0008_Sk_P_PE_465_EX", "TGL07_0009_Bl_P_PE_293_WT", "TGL07_0009_Bl_P_PE_486_EX", "TGL07_0009_Pb_R_PE_547_EX", "TGL07_0010_Pb_R_PE_538_EX", "TGL07_0010_Sb_M_PE_292_WT", "TGL07_0010_Sb_M_PE_441_EX", "TGL07_0011_Co_M_PE_277_WT", "TGL07_0011_Pb_R_PE_525_EX", "TGL07_0011_Um_M_PE_352_EX", "TGL07_0012_Ln_M_PE_274_WT", "TGL07_0012_Ln_M_PE_455_EX", "TGL07_0012_Pb_R_PE_540_EX", "TGL07_0013_Pb_R_PE_538_EX", "TGL07_0013_Vg_P_PE_460_EX", "TGL07_0014_Ce_P_PE_299_WT", "TGL07_0014_Ce_P_PE_434_EX", "TGL07_0014_Pb_R_PE_537_EX", "TGL07_0015_Pb_R_PE_544_EX", "TGL07_0015_Um_M_PE_299_WT", "TGL07_0015_Um_M_PE_453_EX", "TGL07_0016_Om_M_PE_300_WT", "TGL07_0016_Om_M_PE_492_EX", "TGL07_0016_Pb_R_PE_547_EX", "TGL07_0017_Co_P_PE_290_WT", "TGL07_0017_Co_P_PE_399_EX", "TGL07_0017_Pb_R_PE_501_EX", "TGL07_0018_Lv_M_PE_269_WT", "TGL07_0018_Lv_M_PE_333_EX", "TGL07_0018_Pb_R_PE_514_EX", "TGL07_0019_Pb_R_PE_500_EX", "TGL07_0019_Ut_P_PE_278_WT", "TGL07_0019_Ut_P_PE_445_EX", "TGL07_0020_Ag_M_PE_297_WT" ],
+  "workflows" : [ "CNVkit", "RSEM", "STAR", "Sequenza" ],
+  "processingAlgorithms" : [ "ProvisionFiles" ],
+  "fileMetaTypes" : [ "text/plain" ],
+  "maxInputFiles" : 86,
+  "minInputFiles" : 86,
+  "totalInputFiles" : 86,
+  "maxOutputFileProvenanceRecords" : 62,
+  "minOutputFileProvenanceRecords" : 62,
+  "totalOutputFileProvenanceRecords" : 62,
+  "workflowRuns" : [ {
+    "workflowIni" : {
+      "blacklist" : "/.mounts/labs/TGL/gsi/databases/blacklist.txt",
+      "cbiowrap_basedir" : "/.mounts/labs/PDE/data/cbioWrap/cBioWrap2",
+      "cbiowrap_mem" : "32",
+      "chang_hotspot" : "/.mounts/labs/TGL/gsi/databases/20161121_Chang_hotspot_list.tsv",
+      "data_dir" : "data",
+      "ensemble_gene_file" : "/.mounts/labs/TGL/gsi/databases/ensemble_conversion.txt",
+      "input_mafs" : "",
+      "input_rsem_counts" : "/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/59280211/SWID_11119358_TGL07_0004_Ov_P_PE_289_WT_171123_NB551051_0037_AHL5HNAFXX_CCGTCC_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/6750582/SWID_11119373_TGL07_0003_Ut_P_PE_272_WT_171123_NB551056_0034_AHL5HTAFXX_CAGATC_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/2454257/SWID_11777350_TGL07_0011_Co_M_PE_277_WT_180319_NB551056_0049_AHLKVJBGX5_CAGATC_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/13959629/SWID_11781251_TGL07_0012_Ln_M_PE_274_WT_171129_NB551056_0037_AH557VBGX5_GATCAG_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/77246763/SWID_11777347_TGL07_0010_Sb_M_PE_292_WT_180319_NB551056_0049_AHLKVJBGX5_TGACCA_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/77459179/SWID_11781275_TGL07_0017_Co_P_PE_290_WT_171123_NB551051_0037_AHL5HNAFXX_ACAGTG_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/72198580/SWID_11781269_TGL07_0005_Om_M_PE_303_WT_171129_NB551051_0040_AH53W3BGX5_ATCACG_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/93448471/SWID_11781266_TGL07_0007_Bn_M_PE_304_WT_171129_NB551051_0040_AH53W3BGX5_TAGCTT_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/79814043/SWID_11781245_TGL07_0014_Ce_P_PE_299_WT_171129_NB551056_0037_AH557VBGX5_CGTACG_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/20371870/SWID_11781257_TGL07_0020_Ag_M_PE_297_WT_171129_NB551051_0040_AH53W3BGX5_GTGAAA_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/44137368/SWID_11781774_TGL07_0018_Lv_M_PE_269_WT_180109_NB551056_0039_AH5JC2BGX5_GCCAAT_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/81679032/SWID_11781254_TGL07_0009_Bl_P_PE_293_WT_171129_NB551056_0037_AH557VBGX5_TTAGGC_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/86000204/SWID_11781248_TGL07_0019_Ut_P_PE_278_WT_171129_NB551056_0037_AH557VBGX5_CTTGTA_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/90425806/SWID_11119361_TGL07_0004_Ov_P_PE_289_WT_171123_NB551056_0034_AHL5HTAFXX_CCGTCC_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/92294175/SWID_11105789_TGL07_0001_Lu_M_PE_292_WT_171122_NB551056_0033_AHKMWKAFXX_CGATGT_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/17745872/SWID_11119370_TGL07_0003_Ut_P_PE_272_WT_171123_NB551051_0037_AHL5HNAFXX_CAGATC_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/66162729/SWID_11119349_TGL07_0002_Sb_P_PE_294_WT_171123_NB551056_0034_AHL5HTAFXX_TGACCA_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/83206476/SWID_11781272_TGL07_0017_Co_P_PE_290_WT_171123_NB551056_0034_AHL5HTAFXX_ACAGTG_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/75019616/SWID_11119346_TGL07_0002_Sb_P_PE_294_WT_171123_NB551051_0037_AHL5HNAFXX_TGACCA_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/62634547/SWID_11781260_TGL07_0008_Sk_P_PE_280_WT_171129_NB551051_0040_AH53W3BGX5_GGCTAC_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/6168707/SWID_11105786_TGL07_0001_Lu_M_PE_292_WT_171122_NB551051_0036_AHLKN7AFXX_CGATGT_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/27176235/SWID_11781242_TGL07_0015_Um_M_PE_299_WT_171129_NB551056_0037_AH557VBGX5_ATTCCT_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/37140341/SWID_11781263_TGL07_0006_Lv_M_PE_288_WT_171129_NB551051_0040_AH53W3BGX5_ACTTGA_L001.genes.results,/.mounts/labs/TGL/production2/seqware-results/RSEM_1.1/74111773/SWID_11777341_TGL07_0016_Om_M_PE_300_WT_180319_NB551056_0049_AHLKVJBGX5_CGATGT_L001.genes.results",
+      "input_segs" : "/.mounts/labs/TGL/production2/seqware-results/Sequenza_1.0/6700071/TGL07_0008_Sk_P_EX_171012.varscanSomatic_Total_CN.seg,/.mounts/labs/TGL/production2/seqware-results/Sequenza_1.0/73626001/TGL07_0002_Sb_P_EX_171106.varscanSomatic_Total_CN.seg,/.mounts/labs/TGL/production2/seqware-results/Sequenza_1.0/74388826/TGL07_0007_Bn_M_EX_171012.varscanSomatic_Total_CN.seg,/.mounts/labs/TGL/production2/seqware-results/Sequenza_1.0/77535086/TGL07_0017_Co_P_EX_171106.varscanSomatic_Total_CN.seg,/.mounts/labs/TGL/production2/seqware-results/Sequenza_1.0/96111527/TGL07_0004_Ov_P_EX_171106.varscanSomatic_Total_CN.seg,/.mounts/labs/TGL/production2/seqware-results/Sequenza_1.0/44509301/TGL07_0019_Ut_P_EX_171106.varscanSomatic_Total_CN.seg,/.mounts/labs/TGL/production3/seqware-results/CNVkit_1.0/10195260/TGL07_0015_Um_M_EX_171012.sorted.filter.deduped.realign.recal.seg,/.mounts/labs/TGL/production2/seqware-results/Sequenza_1.0/89306083/TGL07_0015_Um_M_EX_171012.varscanSomatic_Total_CN.seg,/.mounts/labs/TGL/production2/seqware-results/Sequenza_1.0/90622475/TGL07_0005_Om_M_EX_171012.varscanSomatic_Total_CN.seg,/.mounts/labs/TGL/production2/seqware-results/Sequenza_1.0/45998276/TGL07_0013_Vg_P_EX_171012.varscanSomatic_Total_CN.seg,/.mounts/labs/TGL/production3/seqware-results/CNVkit_1.0/37214326/TGL07_0014_Ce_P_EX_171012.sorted.filter.deduped.realign.recal.seg,/.mounts/labs/TGL/production3/seqware-results/CNVkit_1.0/98354238/TGL07_0016_Om_M_EX_171012.sorted.filter.deduped.realign.recal.seg,/.mounts/labs/TGL/production3/seqware-results/CNVkit_1.0/1933533/TGL07_0007_Bn_M_EX_171012.sorted.filter.deduped.realign.recal.seg,/.mounts/labs/TGL/production2/seqware-results/Sequenza_1.0/91157590/TGL07_0010_Sb_M_EX_171012.varscanSomatic_Total_CN.seg,/.mounts/labs/TGL/production2/seqware-results/Sequenza_1.0/90314816/TGL07_0006_Lv_M_EX_171012.varscanSomatic_Total_CN.seg,/.mounts/labs/TGL/production3/seqware-results/CNVkit_1.0/34656463/TGL07_0011_Um_M_EX_171012.sorted.filter.deduped.realign.recal.seg,/.mounts/labs/TGL/production3/seqware-results/Sequenza_1.0/44884602/TGL07_0001_Lu_M_EX_171106.sorted.filter.deduped.realign.recal.varscanSomatic_Total_CN.seg,/.mounts/labs/TGL/production2/seqware-results/Sequenza_1.0/96570173/TGL07_0009_Bl_P_EX_171012.varscanSomatic_Total_CN.seg,/.mounts/labs/TGL/production2/seqware-results/Sequenza_1.0/39949330/TGL07_0018_Lv_M_EX_171106.varscanSomatic_Total_CN.seg,/.mounts/labs/TGL/production3/seqware-results/CNVkit_1.0/85099255/TGL07_0001_Lu_M_EX_171106.sorted.filter.deduped.realign.recal.seg,/.mounts/labs/TGL/production3/seqware-results/CNVkit_1.0/51762465/TGL07_0009_Bl_P_EX_171012.sorted.filter.deduped.realign.recal.seg,/.mounts/labs/TGL/production3/seqware-results/CNVkit_1.0/73350493/TGL07_0017_Co_P_EX_171106.sorted.filter.deduped.realign.recal.seg,/.mounts/labs/TGL/production2/seqware-results/Sequenza_1.0/32023391/TGL07_0012_Ln_M_EX_171012.varscanSomatic_Total_CN.seg,/.mounts/labs/TGL/production3/seqware-results/CNVkit_1.0/21339797/TGL07_0004_Ov_P_EX_171106.sorted.filter.deduped.realign.recal.seg,/.mounts/labs/TGL/production2/seqware-results/Sequenza_1.0/49088680/TGL07_0003_Ut_P_EX_171106.varscanSomatic_Total_CN.seg,/.mounts/labs/TGL/production3/seqware-results/CNVkit_1.0/19616073/TGL07_0008_Sk_P_EX_171012.sorted.filter.deduped.realign.recal.seg,/.mounts/labs/TGL/production3/seqware-results/CNVkit_1.0/15883046/TGL07_0012_Ln_M_EX_171012.sorted.filter.deduped.realign.recal.seg,/.mounts/labs/TGL/production3/seqware-results/CNVkit_1.0/91022476/TGL07_0003_Ut_P_EX_171106.sorted.filter.deduped.realign.recal.seg,/.mounts/labs/TGL/production3/seqware-results/CNVkit_1.0/91698671/TGL07_0002_Sb_P_EX_171106.sorted.filter.deduped.realign.recal.seg,/.mounts/labs/TGL/production3/seqware-results/CNVkit_1.0/57591399/TGL07_0010_Sb_M_EX_171012.sorted.filter.deduped.realign.recal.seg,/.mounts/labs/TGL/production3/seqware-results/CNVkit_1.0/22822247/TGL07_0019_Ut_P_EX_171106.sorted.filter.deduped.realign.recal.seg,/.mounts/labs/TGL/production3/seqware-results/CNVkit_1.0/99697965/TGL07_0013_Vg_P_EX_171012.sorted.filter.deduped.realign.recal.seg,/.mounts/labs/TGL/production3/seqware-results/CNVkit_1.0/10004327/TGL07_0018_Lv_M_EX_171106.sorted.filter.deduped.realign.recal.seg,/.mounts/labs/TGL/production2/seqware-results/Sequenza_1.0/47852576/TGL07_0016_Om_M_EX_171012.varscanSomatic_Total_CN.seg,/.mounts/labs/TGL/production3/seqware-results/CNVkit_1.0/70149842/TGL07_0005_Om_M_EX_171012.sorted.filter.deduped.realign.recal.seg,/.mounts/labs/TGL/production2/seqware-results/Sequenza_1.0/69501994/TGL07_0014_Ce_P_EX_171012.varscanSomatic_Total_CN.seg,/.mounts/labs/TGL/production3/seqware-results/CNVkit_1.0/73286119/TGL07_0006_Lv_M_EX_171012.sorted.filter.deduped.realign.recal.seg,/.mounts/labs/TGL/production2/seqware-results/Sequenza_1.0/13018368/TGL07_0011_Um_M_EX_171012.varscanSomatic_Total_CN.seg",
+      "input_star_rtabs" : "/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/95192737/SWID_11780725_TGL07_0009_Bl_P_PE_293_WT_171129_NB551056_0037_AH557VBGX5_TTAGGC_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/22087449/SWID_11777008_TGL07_0011_Co_M_PE_277_WT_180319_NB551056_0049_AHLKVJBGX5_CAGATC_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/75230920/SWID_11780637_TGL07_0008_Sk_P_PE_280_WT_171129_NB551051_0040_AH53W3BGX5_GGCTAC_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/15776218/SWID_11780727_TGL07_0012_Ln_M_PE_274_WT_171129_NB551056_0037_AH557VBGX5_GATCAG_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/89975612/SWID_11780519_TGL07_0017_Co_P_PE_290_WT_171123_NB551051_0037_AHL5HNAFXX_ACAGTG_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/73416186/SWID_11119232_TGL07_0003_Ut_P_PE_272_WT_171123_NB551051_0037_AHL5HNAFXX_CAGATC_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/72115789/SWID_11780629_TGL07_0020_Ag_M_PE_297_WT_171129_NB551051_0040_AH53W3BGX5_GTGAAA_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/21374476/SWID_11777004_TGL07_0016_Om_M_PE_300_WT_180319_NB551056_0049_AHLKVJBGX5_CGATGT_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/26133272/SWID_11119230_TGL07_0002_Sb_P_PE_294_WT_171123_NB551051_0037_AHL5HNAFXX_TGACCA_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/46898208/SWID_11105589_TGL07_0001_Lu_M_PE_292_WT_171122_NB551056_0033_AHKMWKAFXX_CGATGT_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/2097980/SWID_11780635_TGL07_0007_Bn_M_PE_304_WT_171129_NB551051_0040_AH53W3BGX5_TAGCTT_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/38401141/SWID_11119244_TGL07_0003_Ut_P_PE_272_WT_171123_NB551056_0034_AHL5HTAFXX_CAGATC_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/95812304/SWID_11119242_TGL07_0002_Sb_P_PE_294_WT_171123_NB551056_0034_AHL5HTAFXX_TGACCA_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/75577504/SWID_11780731_TGL07_0015_Um_M_PE_299_WT_171129_NB551056_0037_AH557VBGX5_ATTCCT_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/55305931/SWID_11119246_TGL07_0004_Ov_P_PE_289_WT_171123_NB551056_0034_AHL5HTAFXX_CCGTCC_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/67832487/SWID_11780729_TGL07_0014_Ce_P_PE_299_WT_171129_NB551056_0037_AH557VBGX5_CGTACG_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/63176788/SWID_11119234_TGL07_0004_Ov_P_PE_289_WT_171123_NB551051_0037_AHL5HNAFXX_CCGTCC_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/83745579/SWID_11780723_TGL07_0019_Ut_P_PE_278_WT_171129_NB551056_0037_AH557VBGX5_CTTGTA_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/77158144/SWID_11780633_TGL07_0006_Lv_M_PE_288_WT_171129_NB551051_0040_AH53W3BGX5_ACTTGA_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/1554251/SWID_11105601_TGL07_0001_Lu_M_PE_292_WT_171122_NB551051_0036_AHLKN7AFXX_CGATGT_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/78117238/SWID_11780573_TGL07_0017_Co_P_PE_290_WT_171123_NB551056_0034_AHL5HTAFXX_ACAGTG_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/51353955/SWID_11780811_TGL07_0018_Lv_M_PE_269_WT_180109_NB551056_0039_AH5JC2BGX5_GCCAAT_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/84832753/SWID_11777006_TGL07_0010_Sb_M_PE_292_WT_180319_NB551056_0049_AHLKVJBGX5_TGACCA_L001.ReadsPerGene.out.tab,/.mounts/labs/TGL/production2/seqware-results/STAR_1.1.1/83807901/SWID_11780631_TGL07_0005_Om_M_PE_303_WT_171129_NB551051_0040_AH53W3BGX5_ATCACG_L001.ReadsPerGene.out.tab",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "oncokb" : "/.mounts/labs/TGL/gsi/databases/20170412_oncoKB.tsv",
+      "output_dir" : "seqware-results",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "study_title" : "TGL07",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0001_Lu_M_PE_292_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00278" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2916_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Lu" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171122_NB551051_0036_AHLKN7AFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171122_NB551051_0036_AHLKN7AFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CGATGT" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -1751183505
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0001_Lu_M_PE_292_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00278" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2916_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Lu" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171122_NB551051_0036_AHLKN7AFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171122_NB551051_0036_AHLKN7AFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CGATGT" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 1849603163
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0001_Lu_M_PE_292_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00278" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2917_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Lu" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171122_NB551056_0033_AHKMWKAFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171122_NB551056_0033_AHKMWKAFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CGATGT" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -915347310
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0001_Lu_M_PE_292_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00278" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2917_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Lu" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171122_NB551056_0033_AHKMWKAFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171122_NB551056_0033_AHKMWKAFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CGATGT" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 722730676
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0001_Lu_M_PE_387_EX", "TGL07_0001_Pb_R_PE_523_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00278" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2930_1" ], [ "2931_8" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library Seq" ], [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Lu" ], [ "Pb" ] ],
+        "geo_tissue_preparation" : [ [ "Blood" ], [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ], [ "R" ] ],
+        "geo_tube_id" : [ [ "COM-00278-ARC" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX", "171206_D00331_0289_BCBH0FANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_8", "171206_D00331_0289_BCBH0FANXX_lane_1" ],
+      "laneAttributes" : {
+        "pool_name" : [ [ "CBH0FANXX_POOL_Lane1" ] ]
+      },
+      "iusTag" : [ "AATGTTGC", "CAAGACTA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "Sequenza" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "Sequenza " ] ]
+      },
+      "fileId" : 1239630288
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0001_Lu_M_PE_387_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00278" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2930_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library Seq" ] ],
+        "geo_tissue_origin" : [ [ "Lu" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ],
+        "geo_tube_id" : [ [ "COM-00278-ARC" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0289_BCBH0FANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0289_BCBH0FANXX_lane_1" ],
+      "laneAttributes" : {
+        "pool_name" : [ [ "CBH0FANXX_POOL_Lane1" ] ]
+      },
+      "iusTag" : [ "CAAGACTA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "CNVkit" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "CNVkit" ] ]
+      },
+      "fileId" : 1957299049
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0002_Pb_R_PE_526_EX", "TGL07_0002_Sb_P_PE_390_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00510" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2930_2" ], [ "2931_8" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Pb" ], [ "Sb" ] ],
+        "geo_tissue_preparation" : [ [ "Blood" ], [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ], [ "R" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX", "171206_D00331_0289_BCBH0FANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_8", "171206_D00331_0289_BCBH0FANXX_lane_2" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CCTCCTGA", "TGAAGAGA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "Sequenza" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "Sequenza " ] ]
+      },
+      "fileId" : 1180421195
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0002_Sb_P_PE_294_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00510" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2918_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Sb" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171123_NB551056_0034_AHL5HTAFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171123_NB551056_0034_AHL5HTAFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "TGACCA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -1539658663
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0002_Sb_P_PE_294_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00510" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2918_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Sb" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171123_NB551056_0034_AHL5HTAFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171123_NB551056_0034_AHL5HTAFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "TGACCA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -1066996268
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0002_Sb_P_PE_294_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00510" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2919_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Sb" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171123_NB551051_0037_AHL5HNAFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171123_NB551051_0037_AHL5HNAFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "TGACCA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -1527045992
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0002_Sb_P_PE_294_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00510" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2919_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Sb" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171123_NB551051_0037_AHL5HNAFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171123_NB551051_0037_AHL5HNAFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "TGACCA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -1399099075
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0002_Sb_P_PE_390_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00510" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2930_2" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Sb" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0289_BCBH0FANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0289_BCBH0FANXX_lane_2" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CCTCCTGA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "CNVkit" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "CNVkit" ] ]
+      },
+      "fileId" : -568034619
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0003_Pb_R_PE_524_EX", "TGL07_0003_Ut_P_PE_324_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00518" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2930_2" ], [ "2931_8" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Pb" ], [ "Ut" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ], [ "R" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX", "171206_D00331_0289_BCBH0FANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_8", "171206_D00331_0289_BCBH0FANXX_lane_2" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "AGATCGCA", "TGGTGGTA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "Sequenza" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "Sequenza " ] ]
+      },
+      "fileId" : -1187461014
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0003_Ut_P_PE_272_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00518" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2918_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ut" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171123_NB551056_0034_AHL5HTAFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171123_NB551056_0034_AHL5HTAFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CAGATC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -35362435
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0003_Ut_P_PE_272_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00518" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2918_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ut" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171123_NB551056_0034_AHL5HTAFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171123_NB551056_0034_AHL5HTAFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CAGATC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 2057550227
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0003_Ut_P_PE_272_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00518" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2919_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ut" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171123_NB551051_0037_AHL5HNAFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171123_NB551051_0037_AHL5HNAFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CAGATC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -1599525302
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0003_Ut_P_PE_272_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00518" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2919_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ut" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171123_NB551051_0037_AHL5HNAFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171123_NB551051_0037_AHL5HNAFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CAGATC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -1216833298
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0003_Ut_P_PE_324_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00518" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2930_2" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ut" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0289_BCBH0FANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0289_BCBH0FANXX_lane_2" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "TGGTGGTA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "CNVkit" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "CNVkit" ] ]
+      },
+      "fileId" : -794678788
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0004_Ov_P_PE_289_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00555" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2918_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ov" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171123_NB551056_0034_AHL5HTAFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171123_NB551056_0034_AHL5HTAFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CCGTCC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -1752595502
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0004_Ov_P_PE_289_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00555" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2918_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ov" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171123_NB551056_0034_AHL5HTAFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171123_NB551056_0034_AHL5HTAFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CCGTCC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 1257009237
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0004_Ov_P_PE_289_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00555" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2919_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ov" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171123_NB551051_0037_AHL5HNAFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171123_NB551051_0037_AHL5HNAFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CCGTCC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 1343477786
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0004_Ov_P_PE_289_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00555" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2919_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ov" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171123_NB551051_0037_AHL5HNAFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171123_NB551051_0037_AHL5HNAFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CCGTCC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -1996656449
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0004_Ov_P_PE_443_EX", "TGL07_0004_Pb_R_PE_522_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00555" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_6" ], [ "2931_8" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ov" ], [ "Pb" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ], [ "R" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_6", "171206_D00331_0288_ACBG0BANXX_lane_8" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "AAGAGATC", "CAACCACA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "Sequenza" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "Sequenza " ] ]
+      },
+      "fileId" : -907968396
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0004_Ov_P_PE_443_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00555" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_6" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ov" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_6" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "AAGAGATC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "CNVkit" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "CNVkit" ] ]
+      },
+      "fileId" : 2001908099
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0005_Om_M_PE_303_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00826" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2926_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Om" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551051_0040_AH53W3BGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171129_NB551051_0040_AH53W3BGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "ATCACG" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 1171762656
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0005_Om_M_PE_303_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00826" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2926_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Om" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551051_0040_AH53W3BGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171129_NB551051_0040_AH53W3BGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "ATCACG" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 1857012560
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0005_Om_M_PE_462_EX", "TGL07_0005_Pb_R_PE_510_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00826" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_5" ], [ "2883_8" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Om" ], [ "Pb" ] ],
+        "geo_tissue_preparation" : [ [ "Blood" ], [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ], [ "R" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_5", "171013_D00343_0195_BCBGVHANXX_lane_8" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "AATGTTGC", "TGAAGAGA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "Sequenza" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "Sequenza " ] ]
+      },
+      "fileId" : 1903482606
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0005_Om_M_PE_462_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00826" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_5" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Om" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_5" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "AATGTTGC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "CNVkit" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "CNVkit" ] ]
+      },
+      "fileId" : -627179794
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0006_Lv_M_PE_288_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00867" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2926_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Lv" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551051_0040_AH53W3BGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171129_NB551051_0040_AH53W3BGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "ACTTGA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -840731759
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0006_Lv_M_PE_288_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00867" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2926_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Lv" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551051_0040_AH53W3BGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171129_NB551051_0040_AH53W3BGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "ACTTGA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -151222625
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0006_Lv_M_PE_482_EX", "TGL07_0006_Pb_R_PE_527_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00867" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_5" ], [ "2883_8" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Lv" ], [ "Pb" ] ],
+        "geo_tissue_preparation" : [ [ "Blood" ], [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ], [ "R" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_5", "171013_D00343_0195_BCBGVHANXX_lane_8" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "AAGAGATC", "AGATCGCA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "Sequenza" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "Sequenza " ] ]
+      },
+      "fileId" : -1085625500
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0006_Lv_M_PE_482_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00867" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_5" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Lv" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_5" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "AGATCGCA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "CNVkit" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "CNVkit" ] ]
+      },
+      "fileId" : -774657755
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0007_Bn_M_PE_304_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00943" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2926_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Bn" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551051_0040_AH53W3BGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171129_NB551051_0040_AH53W3BGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "TAGCTT" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 771160524
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0007_Bn_M_PE_304_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00943" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2926_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Bn" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551051_0040_AH53W3BGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171129_NB551051_0040_AH53W3BGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "TAGCTT" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 1860217550
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0007_Bn_M_PE_476_EX", "TGL07_0007_Pb_R_PE_523_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00943" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_6" ], [ "2883_8" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Bn" ], [ "Pb" ] ],
+        "geo_tissue_preparation" : [ [ "Blood" ], [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ], [ "R" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_6", "171013_D00343_0195_BCBGVHANXX_lane_8" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CAACCACA", "TGGAACAA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "Sequenza" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "Sequenza " ] ]
+      },
+      "fileId" : 1048483053
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0007_Bn_M_PE_476_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00943" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_6" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Bn" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_6" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CAACCACA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "CNVkit" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "CNVkit" ] ]
+      },
+      "fileId" : -1801729602
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0008_Pb_R_PE_524_EX", "TGL07_0008_Sk_P_PE_465_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00961" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_6" ], [ "2883_8" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Pb" ], [ "Sk" ] ],
+        "geo_tissue_preparation" : [ [ "Blood" ], [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ], [ "R" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_6", "171013_D00343_0195_BCBGVHANXX_lane_8" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "ACAGATTC", "CCTCTATC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "Sequenza" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "Sequenza " ] ]
+      },
+      "fileId" : -1868314586
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0008_Sk_P_PE_280_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00961" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2926_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Sk" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551051_0040_AH53W3BGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171129_NB551051_0040_AH53W3BGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "GGCTAC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -941505916
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0008_Sk_P_PE_280_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00961" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2926_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Sk" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551051_0040_AH53W3BGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171129_NB551051_0040_AH53W3BGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "GGCTAC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 1935240786
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0008_Sk_P_PE_465_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00961" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_6" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Sk" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_6" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CCTCTATC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "CNVkit" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "CNVkit" ] ]
+      },
+      "fileId" : -1250921944
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0009_Bl_P_PE_293_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01178" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2927_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Bl" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551056_0037_AH557VBGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171129_NB551056_0037_AH557VBGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "TTAGGC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -1187953666
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0009_Bl_P_PE_293_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01178" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2927_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Bl" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551056_0037_AH557VBGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171129_NB551056_0037_AH557VBGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "TTAGGC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 384404841
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0009_Bl_P_PE_486_EX", "TGL07_0009_Pb_R_PE_547_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01178" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_6" ], [ "2883_8" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Bl" ], [ "Pb" ] ],
+        "geo_tissue_preparation" : [ [ "Blood" ], [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ], [ "R" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_6", "171013_D00343_0195_BCBGVHANXX_lane_8" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CCAGTTCA", "TGGCTTCA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "Sequenza" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "Sequenza " ] ]
+      },
+      "fileId" : -1166964670
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0009_Bl_P_PE_486_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01178" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_6" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Bl" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_6" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CCAGTTCA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "CNVkit" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "CNVkit" ] ]
+      },
+      "fileId" : -1468946884
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0010_Pb_R_PE_538_EX", "TGL07_0010_Sb_M_PE_441_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01710" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_7" ], [ "2931_6" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Pb" ], [ "Sb" ] ],
+        "geo_tissue_preparation" : [ [ "Blood" ], [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ], [ "R" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX", "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ], [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_7", "171206_D00331_0288_ACBG0BANXX_lane_6" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "ACACAGAA", "GAACAGGC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "Sequenza" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "Sequenza " ] ]
+      },
+      "fileId" : 950733827
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0010_Sb_M_PE_292_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01710" ] ],
+        "geo_group_id" : [ [ "171122" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "3055_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Sb" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "180319_NB551056_0049_AHLKVJBGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "180319_NB551056_0049_AHLKVJBGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "TGACCA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -1639688586
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0010_Sb_M_PE_292_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01710" ] ],
+        "geo_group_id" : [ [ "171122" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "3055_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Sb" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "180319_NB551056_0049_AHLKVJBGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "180319_NB551056_0049_AHLKVJBGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "TGACCA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -819900322
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0010_Sb_M_PE_441_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01710" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_6" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Sb" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_6" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "ACACAGAA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "CNVkit" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "CNVkit" ] ]
+      },
+      "fileId" : -1722354764
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0011_Co_M_PE_277_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01743" ] ],
+        "geo_group_id" : [ [ "171122" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "3055_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Co" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "180319_NB551056_0049_AHLKVJBGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "180319_NB551056_0049_AHLKVJBGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CAGATC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -965065390
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0011_Co_M_PE_277_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01743" ] ],
+        "geo_group_id" : [ [ "171122" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "3055_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Co" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "180319_NB551056_0049_AHLKVJBGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "180319_NB551056_0049_AHLKVJBGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CAGATC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 1053643083
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0011_Pb_R_PE_525_EX", "TGL07_0011_Um_M_PE_352_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01743" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_7" ], [ "2931_7" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Pb" ], [ "Um" ] ],
+        "geo_tissue_preparation" : [ [ "Blood" ], [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ], [ "R" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX", "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ], [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_7", "171206_D00331_0288_ACBG0BANXX_lane_7" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "AACCGAGA", "ACAAGCTA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "Sequenza" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "Sequenza " ] ]
+      },
+      "fileId" : 673527002
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0011_Um_M_PE_352_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01743" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_7" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Um" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_7" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "AACCGAGA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "CNVkit" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "CNVkit" ] ]
+      },
+      "fileId" : 1572912111
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0012_Ln_M_PE_274_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01296" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2927_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ln" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551056_0037_AH557VBGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171129_NB551056_0037_AH557VBGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "GATCAG" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 1169572250
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0012_Ln_M_PE_274_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01296" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2927_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ln" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551056_0037_AH557VBGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171129_NB551056_0037_AH557VBGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "GATCAG" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -676348000
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0012_Ln_M_PE_455_EX", "TGL07_0012_Pb_R_PE_540_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01296" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_8" ], [ "2931_5" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ln" ], [ "Pb" ] ],
+        "geo_tissue_preparation" : [ [ "Blood" ], [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ], [ "R" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX", "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ], [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_8", "171206_D00331_0288_ACBG0BANXX_lane_5" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CAAGACTA", "CGACTGGA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "Sequenza" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "Sequenza " ] ]
+      },
+      "fileId" : -711776548
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0012_Ln_M_PE_455_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01296" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_5" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ln" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_5" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CGACTGGA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "CNVkit" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "CNVkit" ] ]
+      },
+      "fileId" : 738058144
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0013_Pb_R_PE_538_EX", "TGL07_0013_Vg_P_PE_460_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01338" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_8" ], [ "2931_5" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Pb" ], [ "Vg" ] ],
+        "geo_tissue_preparation" : [ [ "Blood" ], [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ], [ "R" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX", "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ], [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_8", "171206_D00331_0288_ACBG0BANXX_lane_5" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CCTCCTGA", "TGGTGGTA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "Sequenza" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "Sequenza " ] ]
+      },
+      "fileId" : 991288334
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0013_Vg_P_PE_460_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01338" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_5" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Vg" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_5" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CCTCCTGA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "CNVkit" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "CNVkit" ] ]
+      },
+      "fileId" : -1424663310
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0014_Ce_P_PE_299_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01458" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2927_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ce" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551056_0037_AH557VBGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171129_NB551056_0037_AH557VBGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CGTACG" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 781467435
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0014_Ce_P_PE_299_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01458" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2927_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ce" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551056_0037_AH557VBGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171129_NB551056_0037_AH557VBGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CGTACG" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 338380432
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0014_Ce_P_PE_434_EX", "TGL07_0014_Pb_R_PE_537_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01458" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_8" ], [ "2931_5" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ce" ], [ "Pb" ] ],
+        "geo_tissue_preparation" : [ [ "Blood" ], [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ], [ "R" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX", "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ], [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_8", "171206_D00331_0288_ACBG0BANXX_lane_5" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "AACAACCA", "AATCCGTC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "Sequenza" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "Sequenza " ] ]
+      },
+      "fileId" : -1737255035
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0014_Ce_P_PE_434_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01458" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_5" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ce" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_5" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "AACAACCA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "CNVkit" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "CNVkit" ] ]
+      },
+      "fileId" : 1778704420
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0015_Pb_R_PE_544_EX", "TGL07_0015_Um_M_PE_453_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01602" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_8" ], [ "2931_6" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Pb" ], [ "Um" ] ],
+        "geo_tissue_preparation" : [ [ "Blood" ], [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ], [ "R" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX", "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ], [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_8", "171206_D00331_0288_ACBG0BANXX_lane_6" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CAAGGAGC", "TTCACGCA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "Sequenza" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "Sequenza " ] ]
+      },
+      "fileId" : 1255404105
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0015_Um_M_PE_299_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01602" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2927_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Um" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551056_0037_AH557VBGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171129_NB551056_0037_AH557VBGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "ATTCCT" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 872314767
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0015_Um_M_PE_299_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01602" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2927_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Um" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551056_0037_AH557VBGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171129_NB551056_0037_AH557VBGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "ATTCCT" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -1403544480
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0015_Um_M_PE_453_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01602" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_6" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Um" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_6" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CAAGGAGC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "CNVkit" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "CNVkit" ] ]
+      },
+      "fileId" : 1677314798
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0016_Om_M_PE_300_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01650" ] ],
+        "geo_group_id" : [ [ "171122" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "3055_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Om" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "180319_NB551056_0049_AHLKVJBGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "180319_NB551056_0049_AHLKVJBGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CGATGT" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -930784513
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0016_Om_M_PE_300_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01650" ] ],
+        "geo_group_id" : [ [ "171122" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "3055_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Om" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "180319_NB551056_0049_AHLKVJBGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "180319_NB551056_0049_AHLKVJBGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CGATGT" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -1784110328
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0016_Om_M_PE_492_EX", "TGL07_0016_Pb_R_PE_547_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01650" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_8" ], [ "2931_7" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Om" ], [ "Pb" ] ],
+        "geo_tissue_preparation" : [ [ "Blood" ], [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ], [ "R" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX", "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ], [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_8", "171206_D00331_0288_ACBG0BANXX_lane_7" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "AAGACGGA", "CACCTTAC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "Sequenza" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "Sequenza " ] ]
+      },
+      "fileId" : -1877830787
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0016_Om_M_PE_492_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01650" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_7" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Om" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_7" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CACCTTAC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "CNVkit" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "CNVkit" ] ]
+      },
+      "fileId" : 473582617
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0017_Co_P_PE_290_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00603" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2918_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Co" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171123_NB551056_0034_AHL5HTAFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171123_NB551056_0034_AHL5HTAFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "ACAGTG" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -1087189423
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0017_Co_P_PE_290_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00603" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2918_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Co" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171123_NB551056_0034_AHL5HTAFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171123_NB551056_0034_AHL5HTAFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "ACAGTG" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 308800653
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0017_Co_P_PE_290_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00603" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2919_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Co" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171123_NB551051_0037_AHL5HNAFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171123_NB551051_0037_AHL5HNAFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "ACAGTG" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 31207659
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0017_Co_P_PE_290_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00603" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2919_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Co" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171123_NB551051_0037_AHL5HNAFXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171123_NB551051_0037_AHL5HNAFXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "ACAGTG" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 2019507919
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0017_Co_P_PE_399_EX", "TGL07_0017_Pb_R_PE_501_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00603" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_7" ], [ "2931_8" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Co" ], [ "Pb" ] ],
+        "geo_tissue_preparation" : [ [ "Blood" ], [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ], [ "R" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_7", "171206_D00331_0288_ACBG0BANXX_lane_8" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CCTCTATC", "TGGAACAA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "Sequenza" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "Sequenza " ] ]
+      },
+      "fileId" : -1654839224
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0017_Co_P_PE_399_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00603" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_7" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Co" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_7" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "TGGAACAA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "CNVkit" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "CNVkit" ] ]
+      },
+      "fileId" : 543881255
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0018_Lv_M_PE_269_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00604" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2955_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Lv" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "180109_NB551056_0039_AH5JC2BGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "180109_NB551056_0039_AH5JC2BGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "GCCAAT" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 1906099803
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0018_Lv_M_PE_269_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00604" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2955_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Lv" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "180109_NB551056_0039_AH5JC2BGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "180109_NB551056_0039_AH5JC2BGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "GCCAAT" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -1048964086
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0018_Lv_M_PE_333_EX", "TGL07_0018_Pb_R_PE_514_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00604" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2930_1" ], [ "2931_8" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Lv" ], [ "Pb" ] ],
+        "geo_tissue_preparation" : [ [ "Blood" ], [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ], [ "R" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX", "171206_D00331_0289_BCBH0FANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_8", "171206_D00331_0289_BCBH0FANXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "ACAGATTC", "CCAGTTCA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "Sequenza" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "Sequenza " ] ]
+      },
+      "fileId" : 324275555
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0018_Lv_M_PE_333_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00604" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2930_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Lv" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0289_BCBH0FANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0289_BCBH0FANXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "ACAGATTC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "CNVkit" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "CNVkit" ] ]
+      },
+      "fileId" : 1312952488
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0019_Pb_R_PE_500_EX", "TGL07_0019_Ut_P_PE_445_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00683" ] ],
+        "geo_group_id" : [ [ "171106" ], [ "171201" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2930_1" ], [ "2931_8" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Pb" ], [ "Ut" ] ],
+        "geo_tissue_preparation" : [ [ "Blood" ], [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ], [ "R" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX", "171206_D00331_0289_BCBH0FANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_8", "171206_D00331_0289_BCBH0FANXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CGACTGGA", "TGGCTTCA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "Sequenza" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "Sequenza " ] ]
+      },
+      "fileId" : 357510616
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0019_Ut_P_PE_278_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00683" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2927_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ut" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551056_0037_AH557VBGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171129_NB551056_0037_AH557VBGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CTTGTA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -722606409
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0019_Ut_P_PE_278_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00683" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2927_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ut" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551056_0037_AH557VBGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551056" ] ]
+      },
+      "laneName" : [ "171129_NB551056_0037_AH557VBGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CTTGTA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 1636483038
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0019_Ut_P_PE_445_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00683" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2930_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ut" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0289_BCBH0FANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0289_BCBH0FANXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "TGGCTTCA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "CNVkit" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "segment data from the tool " : [ [ "CNVkit" ] ]
+      },
+      "fileId" : 1100696057
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0020_Ag_M_PE_297_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00726" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2926_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ag" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551051_0040_AH53W3BGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171129_NB551051_0040_AH53W3BGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "GTGAAA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "RSEM" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : -1748119412
+    }, {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0020_Ag_M_PE_297_WT" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00726" ] ],
+        "geo_group_id" : [ [ "171121" ] ],
+        "geo_library_source_template_type" : [ [ "WT" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "TruSeq_Stranded_TotalRNA" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-09-08" ] ],
+        "geo_run_id_and_position" : [ [ "2926_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ag" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171129_NB551051_0040_AH53W3BGX5" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "NB551051" ] ]
+      },
+      "laneName" : [ "171129_NB551051_0040_AH53W3BGX5_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "GTGAAA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "STAR" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "text/plain" ],
+      "fileAttributes" : {
+        "cvterms" : [ [ "EDAM:topic_0203" ] ]
+      },
+      "fileId" : 1445181116
+    } ],
+    "outputFileProvenanceRecords" : 62
+  } ]
+}
